@@ -1,11 +1,3 @@
-#' Define Grid1d
-#'
-#' @slot xcell numeric
-#' @slot xmin numeric
-#' @slot xmax numeric
-#'
-#' @export
-#'
 setClass("Grid1d",
          slots = list(
            xcell = "numeric",
