@@ -43,7 +43,7 @@ grid3d <- makeGrid3d(xmin = -50, xmax = 50,
                      xcell = 100, ycell = 100, zcell = 100)
 grid3d
 > class      : Grid3d
-> dimensions : xcell = 100, ycell = 100, zcell = 100, ncell = 1e6
+> dimensions : xcell = 100, ycell = 100, zcell = 100, ncell = 1e+06
 > range      : xmin = -50, xmax = 50
                ymin = -50, ymax = 50
                zmin = -50, zmax = 50
