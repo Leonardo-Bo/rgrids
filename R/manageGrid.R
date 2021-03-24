@@ -111,3 +111,36 @@ getCounts <- function(grid, indexCell) {
     return(df_counts)
   }
 }
+
+
+#' Get dataframe to boxplot
+#'
+#' @description Given a Grid1d class object and a 2d dataframe of points
+#'     return original dataframe with supplementary column that group y points
+#'     to boxplot analysis.
+#'
+#' @name getBoxplot
+#' @param grid Grid1d object, made with makeGrid1d function
+#' @param points 2d matrix or dataframe of points
+#' @usage
+#' # Call getBoxplot
+#' # getBoxplot(Grid1d, df_points)
+#' @return
+#' A dataframe with three columns: xbp (x relative to boxplot), x and y
+#' (original points)
+#' @export
+getBoxplot <- function(grid, points) {
+  if (class(grid)[1] != "Grid1d") {
+    stop("grid must be a Grid1d class object")
+  }
+  else {
+    object <- grid
+    indexCell <- getCell(object, points[,1])
+    coords_grid <- .getCoords1d(object@xcell, object@xmin, object@xmax, 1:object@xcell)
+    coords_grid <- round(coords_grid, 10)
+    coords_points <- coords_grid[indexCell]
+    coords_points <- factor(coords_points, levels = coords_grid)
+    df_boxplot <- data.frame(xbp = coords_points, x = points[1,], y = points[,2])
+    return(df_boxplot)
+  }
+}
