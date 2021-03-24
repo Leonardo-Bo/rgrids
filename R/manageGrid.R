@@ -140,7 +140,7 @@ getBoxplot <- function(grid, points) {
     coords_grid <- round(coords_grid, 10)
     coords_points <- coords_grid[indexCell]
     coords_points <- factor(coords_points, levels = coords_grid)
-    df_boxplot <- data.frame(xbp = coords_points, x = points[1,], y = points[,2])
+    df_boxplot <- data.frame(xbp = coords_points, x = points[,1], y = points[,2])
     return(df_boxplot)
   }
 }
