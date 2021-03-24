@@ -2,9 +2,9 @@
 
 export(getCell)
 export(getCounts)
-exportClasses(Grid1d)
-exportClasses(Grid2d)
-exportClasses(Grid3d)
+export(makeGrid1d)
+export(makeGrid2d)
+export(makeGrid3d)
 import(methods)
 importFrom(Rcpp,sourceCpp)
 useDynLib(rgrids)

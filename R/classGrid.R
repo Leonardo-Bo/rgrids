@@ -20,7 +20,7 @@
 #' # class      : Grid1d
 #' # dimensions : xcell = 100
 #' # range      : xmin = -50, xmax = 50
-#' @exportClass Grid1d
+#' @export makeGrid1d
 makeGrid1d <- setClass("Grid1d",
          slots = list(
            xcell = "numeric",
@@ -79,7 +79,7 @@ makeGrid1d <- setClass("Grid1d",
 #' # dimensions : xcell = 100, ycell = 100, ncell = 10000
 #' # range      : xmin = -50, xmax = 50
 #' #              ymin = -50, ymax = 50
-#' @exportClass Grid2d
+#' @export makeGrid2d
 makeGrid2d <- setClass("Grid2d",
          contains = "Grid1d",
          slots = list(
@@ -145,7 +145,7 @@ makeGrid2d <- setClass("Grid2d",
 #' # range      : xmin = -50, xmax = 50
 #' #              ymin = -50, ymax = 50
 #' #              zmin = -50, zmax = 50
-#' @exportClass Grid3d
+#' @export makeGrid3d
 makeGrid3d <- setClass("Grid3d",
          contains = "Grid2d",
          slots = list(
