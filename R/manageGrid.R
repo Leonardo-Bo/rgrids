@@ -80,7 +80,7 @@ getCounts <- function(grid, indexCell) {
   if (class(grid)[1] == "Grid1d") {
     object <- grid
     coords <- .getCount1d(object@xcell, object@xmin, object@xmax, 1:object@xcell)
-    counts <- as.numeric(table(indexCell))
+    counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
     colnames(df_counts) <- c("x", "counts")
     return(df_counts)
@@ -92,7 +92,7 @@ getCounts <- function(grid, indexCell) {
                           object@ymin, object@ymax,
                           1:(object@xcell * object@ycell))
 
-    counts <- as.numeric(table(indexCell))
+    counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
     colnames(df_counts) <- c("x", "y", "counts")
     return(df_counts)
@@ -105,7 +105,7 @@ getCounts <- function(grid, indexCell) {
                           object@zmin, object@zmax,
                           1:(object@xcell * object@ycell * object@zcell))
 
-    counts <- as.numeric(table(indexCell))
+    counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
     colnames(df_counts) <- c("x", "y", "z", "counts")
     return(df_counts)
