@@ -13,15 +13,15 @@
     .Call('_rgrids_getCell3d', PACKAGE = 'rgrids', xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, x, y, z)
 }
 
-.getCount1d <- function(xcell, xmin, xmax, cell) {
-    .Call('_rgrids_getCount1d', PACKAGE = 'rgrids', xcell, xmin, xmax, cell)
+.getCoords1d <- function(xcell, xmin, xmax, cell) {
+    .Call('_rgrids_getCoords1d', PACKAGE = 'rgrids', xcell, xmin, xmax, cell)
 }
 
-.getCount2d <- function(xcell, ycell, xmin, xmax, ymin, ymax, cell) {
-    .Call('_rgrids_getCount2d', PACKAGE = 'rgrids', xcell, ycell, xmin, xmax, ymin, ymax, cell)
+.getCoords2d <- function(xcell, ycell, xmin, xmax, ymin, ymax, cell) {
+    .Call('_rgrids_getCoords2d', PACKAGE = 'rgrids', xcell, ycell, xmin, xmax, ymin, ymax, cell)
 }
 
-.getCount3d <- function(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell) {
-    .Call('_rgrids_getCount3d', PACKAGE = 'rgrids', xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell)
+.getCoords3d <- function(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell) {
+    .Call('_rgrids_getCoords3d', PACKAGE = 'rgrids', xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell)
 }
 

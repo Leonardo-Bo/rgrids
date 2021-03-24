@@ -2,8 +2,8 @@
 using namespace Rcpp;
 
 
-// [[Rcpp::export(name = ".getCount1d")]]
-NumericVector getCount1d(
+// [[Rcpp::export(name = ".getCoords1d")]]
+NumericVector getCoords1d(
     unsigned xcell, double xmin, double xmax, NumericVector cell) {
 
   size_t len = cell.size();
@@ -21,8 +21,8 @@ NumericVector getCount1d(
 }
 
 
-// [[Rcpp::export(name = ".getCount2d")]]
-NumericMatrix getCount2d(
+// [[Rcpp::export(name = ".getCoords2d")]]
+NumericMatrix getCoords2d(
     unsigned xcell, unsigned ycell,
     double xmin, double xmax, double ymin, double ymax,
     NumericVector cell) {
@@ -46,8 +46,8 @@ NumericMatrix getCount2d(
 }
 
 
-// [[Rcpp::export(name = ".getCount3d")]]
-NumericMatrix getCount3d(
+// [[Rcpp::export(name = ".getCoords3d")]]
+NumericMatrix getCoords3d(
     int xcell, int ycell, int zcell,
     double xmin, double xmax,
     double ymin, double ymax,

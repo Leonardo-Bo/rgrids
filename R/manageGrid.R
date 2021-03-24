@@ -79,7 +79,7 @@ getCell <- function(grid, points) {
 getCounts <- function(grid, indexCell) {
   if (class(grid)[1] == "Grid1d") {
     object <- grid
-    coords <- .getCount1d(object@xcell, object@xmin, object@xmax, 1:object@xcell)
+    coords <- .getCoords1d(object@xcell, object@xmin, object@xmax, 1:object@xcell)
     counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
     colnames(df_counts) <- c("x", "counts")
@@ -87,10 +87,10 @@ getCounts <- function(grid, indexCell) {
   }
   if (class(grid)[1] == "Grid2d") {
     object <- grid
-    coords <- .getCount2d(object@xcell, object@ycell,
-                          object@xmin, object@xmax,
-                          object@ymin, object@ymax,
-                          1:(object@xcell * object@ycell))
+    coords <- .getCoords2d(object@xcell, object@ycell,
+                           object@xmin, object@xmax,
+                           object@ymin, object@ymax,
+                           1:(object@xcell * object@ycell))
 
     counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
@@ -99,11 +99,11 @@ getCounts <- function(grid, indexCell) {
   }
   if (class(grid)[1] == "Grid3d") {
     object <- grid
-    coords <- .getCount3d(object@xcell, object@ycell, object@zcell,
-                          object@xmin, object@xmax,
-                          object@ymin, object@ymax,
-                          object@zmin, object@zmax,
-                          1:(object@xcell * object@ycell * object@zcell))
+    coords <- .getCoords3d(object@xcell, object@ycell, object@zcell,
+                           object@xmin, object@xmax,
+                           object@ymin, object@ymax,
+                           object@zmin, object@zmax,
+                           1:(object@xcell * object@ycell * object@zcell))
 
     counts <- as.numeric(table(factor(indexCell, levels = 1:(object@xcell * object@ycell))))
     df_counts <- as.data.frame(cbind(coords, counts))
