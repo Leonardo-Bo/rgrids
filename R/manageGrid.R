@@ -17,6 +17,7 @@ NULL
 #' # Call getCell
 #' # getCell(Grid2d, points)
 #' @return A vector of index
+#' @export
 getCell <- function(grid, points) {
   if (class(grid)[1] == "Grid1d") {
     x <- points
@@ -74,6 +75,7 @@ getCell <- function(grid, points) {
 #' # Call getCounts
 #' # getCounts(Grid2d, indexCell)
 #' @return A dataframe with coordinates and counts
+#' @export
 getCounts <- function(grid, indexCell) {
   if (class(grid)[1] == "Grid1d") {
     object <- grid
