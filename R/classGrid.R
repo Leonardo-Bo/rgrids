@@ -1,11 +1,33 @@
-setClass("Grid1d",
+#' Grid1d class
+#'
+#' @name makeGrid1d
+#'
+#' @description Given the extremes of the range and the number of cells, it
+#'     generates a one-dimensional grid.
+#'
+#' @slot xcell numeric, number of cells
+#' @slot xmin numeric, lower limit
+#' @slot xmax numeric, upper limit
+#'
+#' @usage
+#' # Create S4 object with the following default values
+#' # makeGrid1d(xmin = -5, xmax = 5, xcell = 10)
+#' @return
+#' A uni-dimensional grid
+#' @examples
+#' # grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
+#' # grid1d
+#' # class      : Grid1d
+#' # dimensions : xcell = 100
+#' # range      : xmin = -50, xmax = 50
+makeGrid1d <- setClass("Grid1d",
          slots = list(
            xcell = "numeric",
            xmin = "numeric",
            xmax = "numeric"
          ),
          prototype = list(
-           xcell = 100,
+           xcell = 10,
            xmin = -5,
            xmax = 5
          ),
@@ -26,7 +48,37 @@ setClass("Grid1d",
 )
 
 
-setClass("Grid2d",
+#' Grid2d class
+#'
+#' @name makeGrid2d
+#'
+#' @description Given the extremes of the range and the number of cells along x
+#'     and y, it generates a two-dimensional grid.
+#'
+#' @slot xcell xcell numeric, number of cells along x
+#' @slot ycell ycell numeric, number of cells along y
+#' @slot xmin numeric, lower limit along x
+#' @slot xmax numeric, upper limit along x
+#' @slot ymin numeric, lower limit along y
+#' @slot ymax numeric, upper limit along y
+#'
+#' @usage
+#' # Create S4 object with the following default values
+#' # makeGrid2d(xmin = -5, xmax = 5,
+#' #            ymin = -5, ymax = 5,
+#' #            xcell = 10, ycell = 10)
+#' @return
+#' A two-dimensional grid
+#' @examples
+#' # grid2d <- makeGrid2d(xmin = -50, xmax = 50,
+#' #                      ymin = -50, ymax = 50,
+#' #                      xcell = 100, ycell = 100)
+#' # grid2d
+#' # class      : Grid2d
+#' # dimensions : xcell = 100, ycell = 100, ncell = 10000
+#' # range      : xmin = -50, xmax = 50
+#' #              ymin = -50, ymax = 50
+makeGrid2d <- setClass("Grid2d",
          contains = "Grid1d",
          slots = list(
            ycell = "numeric",
@@ -34,7 +86,7 @@ setClass("Grid2d",
            ymax = "numeric"
          ),
          prototype = list(
-           ycell = 100,
+           ycell = 10,
            ymin = -5,
            ymax = 5
          ),
@@ -55,7 +107,43 @@ setClass("Grid2d",
 )
 
 
-setClass("Grid3d",
+#' Grid3d class
+#'
+#' @name makeGrid3d
+#'
+#' @description Given the extremes of the range and the number of cells along x
+#'     y, and z it generates a three-dimensional grid.
+#'
+#' @slot xcell xcell numeric, number of cells along x
+#' @slot ycell ycell numeric, number of cells along y
+#' @slot zcell zcell numeric, number of cells along z
+#' @slot xmin numeric, lower limit along x
+#' @slot xmax numeric, upper limit along x
+#' @slot ymin numeric, lower limit along y
+#' @slot ymax numeric, upper limit along y
+#' @slot zmin numeric, lower limit along z
+#' @slot zmax numeric, upper limit along z
+#'
+#' @usage
+#' # Create S4 object with the following default values
+#' # makeGrid1d(xmin = -5, xmax = 5,
+#' #            ymin = -5, ymax = 5,
+#' #            zmin = -5, zmax = 5,
+#' #            xcell = 10, ycell = 10, zcell = 10)
+#' @return
+#' A three-dimensional grid
+#' @examples
+#' # grid3d <- makeGrid3d(xmin = -50, xmax = 50,
+#' #                      ymin = -50, ymax = 50,
+#' #                      zmin = -50, zmax = 50,
+#' #                      xcell = 100, ycell = 100, zcell = 100)
+#' # grid3d
+#' # class      : Grid3d
+#' # dimensions : xcell = 100, ycell = 100, zcell = 100, ncell = 1e+06
+#' # range      : xmin = -50, xmax = 50
+#' #              ymin = -50, ymax = 50
+#' #              zmin = -50, zmax = 50
+makeGrid3d <- setClass("Grid3d",
          contains = "Grid2d",
          slots = list(
            zcell = "numeric",
@@ -63,7 +151,7 @@ setClass("Grid3d",
            zmax = "numeric"
          ),
          prototype = list(
-           zcell = 100,
+           zcell = 10,
            zmin = -5,
            zmax = 5
          ),
@@ -81,4 +169,43 @@ setClass("Grid3d",
            if (!c9) { stop("zcell must be integer")}
            return(c7 & c8 & c9)
          }
+)
+
+#' @import methods
+
+setMethod("show",
+          "Grid1d",
+          function(object) {
+            cat("class      : ", class(object), "\n", sep = "")
+            cat("dimensions : ", "xcell = ", object@xcell, "\n", sep = "")
+            cat("range      : ", "xmin = ", object@xmin, ", xmax = ", object@xmax, "\n", sep = "")
+          }
+)
+
+
+setMethod("show",
+          "Grid2d",
+          function(object) {
+            cat("class      : ", class(object), "\n", sep = "")
+            cat("dimensions : ", "xcell = ", object@xcell,
+                ", ycell = ", object@ycell,
+                ", ncell = ", object@xcell * object@ycell, "\n", sep = "")
+            cat("range      : ", "xmin = ", object@xmin, ", xmax = ", object@xmax, "\n",
+                "             ymin = ", object@ymin, ", ymax = ", object@ymax, "\n", sep = "")
+          }
+)
+
+
+setMethod("show",
+          "Grid3d",
+          function(object) {
+            cat("class      : ", class(object), "\n", sep = "")
+            cat("dimensions : ", "xcell = ", object@xcell,
+                ", ycell = ", object@ycell,
+                ", zcell = ", object@zcell,
+                ", ncell = ", object@xcell * object@ycell * object@zcell, "\n", sep = "")
+            cat("range      : ", "xmin = ", object@xmin, ", xmax = ", object@xmax, "\n",
+                "             ymin = ", object@ymin, ", ymax = ", object@ymax, "\n",
+                "             zmin = ", object@zmin, ", zmax = ", object@zmax, "\n",sep = "")
+          }
 )

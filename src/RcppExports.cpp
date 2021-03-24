@@ -59,11 +59,65 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// getCount1d
+NumericVector getCount1d(unsigned xcell, double xmin, double xmax, NumericVector cell);
+RcppExport SEXP _rgrids_getCount1d(SEXP xcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP cellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< unsigned >::type xcell(xcellSEXP);
+    Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
+    Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);
+    rcpp_result_gen = Rcpp::wrap(getCount1d(xcell, xmin, xmax, cell));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getCount2d
+NumericMatrix getCount2d(unsigned xcell, unsigned ycell, double xmin, double xmax, double ymin, double ymax, NumericVector cell);
+RcppExport SEXP _rgrids_getCount2d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP cellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< unsigned >::type xcell(xcellSEXP);
+    Rcpp::traits::input_parameter< unsigned >::type ycell(ycellSEXP);
+    Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
+    Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
+    Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
+    Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);
+    rcpp_result_gen = Rcpp::wrap(getCount2d(xcell, ycell, xmin, xmax, ymin, ymax, cell));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getCount3d
+NumericMatrix getCount3d(int xcell, int ycell, int zcell, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, NumericVector cell);
+RcppExport SEXP _rgrids_getCount3d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP zcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP zminSEXP, SEXP zmaxSEXP, SEXP cellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type xcell(xcellSEXP);
+    Rcpp::traits::input_parameter< int >::type ycell(ycellSEXP);
+    Rcpp::traits::input_parameter< int >::type zcell(zcellSEXP);
+    Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
+    Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
+    Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
+    Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
+    Rcpp::traits::input_parameter< double >::type zmin(zminSEXP);
+    Rcpp::traits::input_parameter< double >::type zmax(zmaxSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);
+    rcpp_result_gen = Rcpp::wrap(getCount3d(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_getCell1d", (DL_FUNC) &_rgrids_getCell1d, 4},
     {"_rgrids_getCell2d", (DL_FUNC) &_rgrids_getCell2d, 8},
     {"_rgrids_getCell3d", (DL_FUNC) &_rgrids_getCell3d, 12},
+    {"_rgrids_getCount1d", (DL_FUNC) &_rgrids_getCount1d, 4},
+    {"_rgrids_getCount2d", (DL_FUNC) &_rgrids_getCount2d, 7},
+    {"_rgrids_getCount3d", (DL_FUNC) &_rgrids_getCount3d, 10},
     {NULL, NULL, 0}
 };
 
