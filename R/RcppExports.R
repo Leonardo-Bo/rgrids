@@ -25,3 +25,15 @@
     .Call('_rgrids_getCoords3d', PACKAGE = 'rgrids', xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell)
 }
 
+.blockmean <- function(matrix, width, block_width, height, block_height) {
+    .Call('_rgrids_blockmean', PACKAGE = 'rgrids', matrix, width, block_width, height, block_height)
+}
+
+.blockmax <- function(matrix, width, block_width, height, block_height) {
+    .Call('_rgrids_blockmax', PACKAGE = 'rgrids', matrix, width, block_width, height, block_height)
+}
+
+.blockmin <- function(matrix, width, block_width, height, block_height) {
+    .Call('_rgrids_blockmin', PACKAGE = 'rgrids', matrix, width, block_width, height, block_height)
+}
+

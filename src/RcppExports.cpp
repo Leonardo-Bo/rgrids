@@ -110,6 +110,51 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// blockmean
+NumericVector blockmean(NumericMatrix matrix, int width, int block_width, int height, int block_height);
+RcppExport SEXP _rgrids_blockmean(SEXP matrixSEXP, SEXP widthSEXP, SEXP block_widthSEXP, SEXP heightSEXP, SEXP block_heightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type matrix(matrixSEXP);
+    Rcpp::traits::input_parameter< int >::type width(widthSEXP);
+    Rcpp::traits::input_parameter< int >::type block_width(block_widthSEXP);
+    Rcpp::traits::input_parameter< int >::type height(heightSEXP);
+    Rcpp::traits::input_parameter< int >::type block_height(block_heightSEXP);
+    rcpp_result_gen = Rcpp::wrap(blockmean(matrix, width, block_width, height, block_height));
+    return rcpp_result_gen;
+END_RCPP
+}
+// blockmax
+NumericVector blockmax(NumericMatrix matrix, int width, int block_width, int height, int block_height);
+RcppExport SEXP _rgrids_blockmax(SEXP matrixSEXP, SEXP widthSEXP, SEXP block_widthSEXP, SEXP heightSEXP, SEXP block_heightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type matrix(matrixSEXP);
+    Rcpp::traits::input_parameter< int >::type width(widthSEXP);
+    Rcpp::traits::input_parameter< int >::type block_width(block_widthSEXP);
+    Rcpp::traits::input_parameter< int >::type height(heightSEXP);
+    Rcpp::traits::input_parameter< int >::type block_height(block_heightSEXP);
+    rcpp_result_gen = Rcpp::wrap(blockmax(matrix, width, block_width, height, block_height));
+    return rcpp_result_gen;
+END_RCPP
+}
+// blockmin
+NumericVector blockmin(NumericMatrix matrix, int width, int block_width, int height, int block_height);
+RcppExport SEXP _rgrids_blockmin(SEXP matrixSEXP, SEXP widthSEXP, SEXP block_widthSEXP, SEXP heightSEXP, SEXP block_heightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type matrix(matrixSEXP);
+    Rcpp::traits::input_parameter< int >::type width(widthSEXP);
+    Rcpp::traits::input_parameter< int >::type block_width(block_widthSEXP);
+    Rcpp::traits::input_parameter< int >::type height(heightSEXP);
+    Rcpp::traits::input_parameter< int >::type block_height(block_heightSEXP);
+    rcpp_result_gen = Rcpp::wrap(blockmin(matrix, width, block_width, height, block_height));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_getCell1d", (DL_FUNC) &_rgrids_getCell1d, 4},
@@ -118,6 +163,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_getCoords1d", (DL_FUNC) &_rgrids_getCoords1d, 4},
     {"_rgrids_getCoords2d", (DL_FUNC) &_rgrids_getCoords2d, 7},
     {"_rgrids_getCoords3d", (DL_FUNC) &_rgrids_getCoords3d, 10},
+    {"_rgrids_blockmean", (DL_FUNC) &_rgrids_blockmean, 5},
+    {"_rgrids_blockmax", (DL_FUNC) &_rgrids_blockmax, 5},
+    {"_rgrids_blockmin", (DL_FUNC) &_rgrids_blockmin, 5},
     {NULL, NULL, 0}
 };
 
