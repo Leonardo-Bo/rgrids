@@ -113,3 +113,186 @@ blockmin <- function(mat, block) {
   block_min <- matrix(block_min, nrow(mat)/br, byrow = TRUE)
   return(block_min)
 }
+
+
+#' Performs list of submatrices
+#'
+#' @description Given a matrix and the size of a block, returns a list
+#'     containing all submatrices made by blocks.
+#'
+#' @name blocklist
+#' @param mat Matrix object
+#' @param block Integer vector of length 2, containing the size of the block
+#' (rows, columns). If only one integer is passed, the block is square
+#' @usage
+#' # Call blocklist
+#' # blockmin(mat, block)
+#' @return
+#' A list of submatrices made by blocks
+#' @export
+blocklist <- function(mat, block) {
+  if (class(mat)[1] != "matrix") {
+    stop("mat must be a matrix")
+  }
+  if (any((block - as.integer(block)) != 0)) {
+    stop("block values must be integer")
+  }
+  if (length(block) == 1) {
+    br <- block
+    bc <- block
+  } else {
+    br <- block[1]
+    bc <- block[2]
+  }
+  if ((nrow(mat)%%br != 0) || (ncol(mat)%%bc != 0)) {
+    stop("rows and columns must be multiple of respective block dimensions")
+  }
+
+  row_res <- nrow(mat)/br
+  col_res <- ncol(mat)/bc
+  mask <- matrix(1:(row_res*col_res), row_res, col_res, byrow = TRUE) %x% matrix(1, br, bc)
+  block_list <- lapply(split(mat, mask), matrix, nr = br)
+  return(block_list)
+}
+
+
+#' Performs list of diagonal submatrices
+#'
+#' @description Given a matrix and the size of a block, returns a list
+#'     containing all diagonal submatrices made by blocks.
+#'
+#' @name dblocklist
+#' @param mat Matrix object
+#' @param block Integer vector of length 2, containing the size of the block
+#' (rows, columns). If only one integer is passed, the block is square
+#' @usage
+#' # Call dblocklist
+#' # dblockmin(mat, block)
+#' @return
+#' A list of diangonal submatrices made by blocks
+#' @export
+dblocklist <- function(mat, block) {
+  if (class(mat)[1] != "matrix") {
+    stop("mat must be a matrix")
+  }
+  if (any((block - as.integer(block)) != 0)) {
+    stop("block values must be integer")
+  }
+  if (length(block) == 1) {
+    br <- block
+    bc <- block
+  } else {
+    br <- block[1]
+    bc <- block[2]
+  }
+  if ((nrow(mat)%%br != 0) || (ncol(mat)%%bc != 0)) {
+    stop("rows and columns must be multiple of respective block dimensions")
+  }
+  if ((nrow(mat) == br) || (ncol(mat) == bc)) {
+    stop("you cannot define a block that covers the entire matrix")
+  }
+
+  row_res <- nrow(mat)/br
+  col_res <- ncol(mat)/bc
+
+  if (row_res != col_res) {
+    stop("defined blocks do not cover the whole diagonal")
+  }
+
+  mask <- diag(1:(row_res)) %x% matrix(1, br, bc)
+  block_list_diagonal <- lapply(split(mat, mask)[-1], matrix, nr = br)
+  return(block_list_diagonal)
+}
+
+
+#' Performs mean of matrices
+#'
+#' @description Given a list of matrices, returns a single matrix in which
+#'     element (i, j) is the average of all corresponding elements (i, j) of
+#'     all matrices in the list
+#'
+#' @name meanMatrix
+#' @param matricesList A list of numeric matrices with same dimensions
+#' @usage
+#' # Call meanMatrix
+#' # meanMatrix(matricesList)
+#' @return
+#' A matrix in which element (i,j) is the average of all corresponding elements
+#' (i,j) of all matrices in the original list
+#' @export
+meanMatrix <- function(matricesList) {
+  c1 <- length(unique(lapply(matricesList, dim))) != 1
+  c2 <- length(unique(lapply(matricesList, typeof))) != 1
+  if (c1) {
+    stop("all matrices must have the same dimensions")
+  }
+  if (c2) {
+    stop("all list elements must be numeric matrices")
+  }
+
+  sumM <- Reduce(`+`, matricesList)
+  meanM <- sumM / length(matricesList)
+  return(meanM)
+}
+
+
+#' Performs sum of matrices
+#'
+#' @description Given a list of matrices, returns a single matrix in which
+#'     element (i, j) is the sum of all corresponding elements (i, j) of
+#'     all matrices in the list
+#'
+#' @name sumMatrix
+#' @param matricesList A list of numeric matrices with same dimensions
+#'
+#' @usage
+#' # Call sumMatrix
+#' # sumMatrix(matricesList)
+#' @return
+#' A matrix in which element (i,j) is the sum of all corresponding elements
+#' (i,j) of all matrices in the original list
+#' @export
+sumMatrix <- function(matricesList) {
+  c1 <- length(unique(lapply(matricesList, dim))) != 1
+  c2 <- length(unique(lapply(matricesList, typeof))) != 1
+  if (c1) {
+    stop("all matrices must have the same dimensions")
+  }
+  if (c2) {
+    stop("all list elements must be numeric matrices")
+  }
+
+  sumM <- Reduce(`+`, matricesList)
+  return(sumM)
+}
+
+
+#' Performs product of matrices
+#'
+#' @description Given a list of matrices, returns a single matrix in which
+#'     element (i, j) is the product of all corresponding elements (i, j) of
+#'     all matrices in the list
+#'
+#' @name dotMatrix
+#' @param matricesList A list of numeric matrices with same dimensions
+#'
+#' @usage
+#' # Call dotMatrix
+#' # dotMatrix(matricesList)
+#' @return
+#' A matrix in which element (i,j) is the product of all corresponding elements
+#' (i,j) of all matrices in the original list
+#' @export
+dotMatrix <- function(matricesList) {
+  c1 <- length(unique(lapply(matricesList, dim))) != 1
+  c2 <- length(unique(lapply(matricesList, typeof))) != 1
+  if (c1) {
+    stop("all matrices must have the same dimensions")
+  }
+  if (c2) {
+    stop("all list elements must be numeric matrices")
+  }
+
+  dotM <- Reduce(`*`, matricesList)
+  return(dotM)
+}
