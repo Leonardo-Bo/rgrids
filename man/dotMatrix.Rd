@@ -2,7 +2,7 @@
 % Please edit documentation in R/matrices.R
 \name{dotMatrix}
 \alias{dotMatrix}
-\title{Performs product of matrices}
+\title{Performs product of matrices or vectors}
 \usage{
 # Call dotMatrix
 # dotMatrix(matricesList)
@@ -17,5 +17,7 @@ A matrix in which element (i,j) is the product of all corresponding elements
 \description{
 Given a list of matrices, returns a single matrix in which
     element (i, j) is the product of all corresponding elements (i, j) of
-    all matrices in the list
+    all matrices in the list.
+    Given a list of vectors, returns a single vector in which element i is
+    the product of all corresponding elements i of all vectors in the list.
 }

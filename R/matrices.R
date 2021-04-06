@@ -205,11 +205,13 @@ dblocklist <- function(mat, block) {
 }
 
 
-#' Performs mean of matrices
+#' Performs mean of matrices or vectors
 #'
 #' @description Given a list of matrices, returns a single matrix in which
 #'     element (i, j) is the average of all corresponding elements (i, j) of
-#'     all matrices in the list
+#'     all matrices in the list.
+#'     Given a list of vectors, returns a single vector in which element i is
+#'     the average of all corresponding elements i of all vectors in the list.
 #'
 #' @name meanMatrix
 #' @param matricesList A list of numeric matrices with same dimensions
@@ -221,13 +223,17 @@ dblocklist <- function(mat, block) {
 #' (i,j) of all matrices in the original list
 #' @export
 meanMatrix <- function(matricesList) {
-  c1 <- length(unique(lapply(matricesList, dim))) != 1
-  c2 <- length(unique(lapply(matricesList, typeof))) != 1
-  if (c1) {
-    stop("all matrices must have the same dimensions")
+  c0 <- typeof(matricesList) == "list"
+  c1 <- length(unique(lapply(matricesList, dim))) == 1 | length(unique(lapply(matricesList, length))) == 1
+  c2 <- all(lapply(matricesList, typeof) == "integer" | lapply(matricesList, typeof) == "double")
+  if (!c0) {
+    stop("matricesList must be a list of matrices or vectors")
   }
-  if (c2) {
-    stop("all list elements must be numeric matrices")
+  if (!c1) {
+    stop("all matrices or vectors must have the same dimensions")
+  }
+  if (!c2) {
+    stop("all list elements must be numeric matrices or vectors")
   }
 
   sumM <- Reduce(`+`, matricesList)
@@ -236,11 +242,13 @@ meanMatrix <- function(matricesList) {
 }
 
 
-#' Performs sum of matrices
+#' Performs sum of matrices or vectors
 #'
 #' @description Given a list of matrices, returns a single matrix in which
 #'     element (i, j) is the sum of all corresponding elements (i, j) of
-#'     all matrices in the list
+#'     all matrices in the list.
+#'     Given a list of vectors, returns a single vector in which element i is
+#'     the sum of all corresponding elements i of all vectors in the list.
 #'
 #' @name sumMatrix
 #' @param matricesList A list of numeric matrices with same dimensions
@@ -253,13 +261,17 @@ meanMatrix <- function(matricesList) {
 #' (i,j) of all matrices in the original list
 #' @export
 sumMatrix <- function(matricesList) {
-  c1 <- length(unique(lapply(matricesList, dim))) != 1
-  c2 <- length(unique(lapply(matricesList, typeof))) != 1
-  if (c1) {
-    stop("all matrices must have the same dimensions")
+  c0 <- typeof(matricesList) == "list"
+  c1 <- length(unique(lapply(matricesList, dim))) == 1 | length(unique(lapply(matricesList, length))) == 1
+  c2 <- all(lapply(matricesList, typeof) == "integer" | lapply(matricesList, typeof) == "double")
+  if (!c0) {
+    stop("matricesList must be a list of matrices or vectors")
   }
-  if (c2) {
-    stop("all list elements must be numeric matrices")
+  if (!c1) {
+    stop("all matrices or vectors must have the same dimensions")
+  }
+  if (!c2) {
+    stop("all list elements must be numeric matrices or vectors")
   }
 
   sumM <- Reduce(`+`, matricesList)
@@ -267,11 +279,13 @@ sumMatrix <- function(matricesList) {
 }
 
 
-#' Performs product of matrices
+#' Performs product of matrices or vectors
 #'
 #' @description Given a list of matrices, returns a single matrix in which
 #'     element (i, j) is the product of all corresponding elements (i, j) of
-#'     all matrices in the list
+#'     all matrices in the list.
+#'     Given a list of vectors, returns a single vector in which element i is
+#'     the product of all corresponding elements i of all vectors in the list.
 #'
 #' @name dotMatrix
 #' @param matricesList A list of numeric matrices with same dimensions
@@ -284,13 +298,17 @@ sumMatrix <- function(matricesList) {
 #' (i,j) of all matrices in the original list
 #' @export
 dotMatrix <- function(matricesList) {
-  c1 <- length(unique(lapply(matricesList, dim))) != 1
-  c2 <- length(unique(lapply(matricesList, typeof))) != 1
-  if (c1) {
-    stop("all matrices must have the same dimensions")
+  c0 <- typeof(matricesList) == "list"
+  c1 <- length(unique(lapply(matricesList, dim))) == 1 | length(unique(lapply(matricesList, length))) == 1
+  c2 <- all(lapply(matricesList, typeof) == "integer" | lapply(matricesList, typeof) == "double")
+  if (!c0) {
+    stop("matricesList must be a list of matrices or vectors")
   }
-  if (c2) {
-    stop("all list elements must be numeric matrices")
+  if (!c1) {
+    stop("all matrices or vectors must have the same dimensions")
+  }
+  if (!c2) {
+    stop("all list elements must be numeric matrices or vectors")
   }
 
   dotM <- Reduce(`*`, matricesList)
