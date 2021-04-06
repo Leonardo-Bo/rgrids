@@ -37,3 +37,19 @@
     .Call('_rgrids_blockmin', PACKAGE = 'rgrids', matrix, width, block_width, height, block_height)
 }
 
+.rowMax <- function(mat) {
+    .Call('_rgrids_rowMax', PACKAGE = 'rgrids', mat)
+}
+
+.rowMin <- function(mat) {
+    .Call('_rgrids_rowMin', PACKAGE = 'rgrids', mat)
+}
+
+.colMax <- function(mat) {
+    .Call('_rgrids_colMax', PACKAGE = 'rgrids', mat)
+}
+
+.colMin <- function(mat) {
+    .Call('_rgrids_colMin', PACKAGE = 'rgrids', mat)
+}
+

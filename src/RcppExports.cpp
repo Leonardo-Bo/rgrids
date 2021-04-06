@@ -155,6 +155,50 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rowMax
+NumericMatrix rowMax(NumericMatrix mat);
+RcppExport SEXP _rgrids_rowMax(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(rowMax(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rowMin
+NumericMatrix rowMin(NumericMatrix mat);
+RcppExport SEXP _rgrids_rowMin(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(rowMin(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// colMax
+NumericMatrix colMax(NumericMatrix mat);
+RcppExport SEXP _rgrids_colMax(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(colMax(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
+// colMin
+NumericMatrix colMin(NumericMatrix mat);
+RcppExport SEXP _rgrids_colMin(SEXP matSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(colMin(mat));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_getCell1d", (DL_FUNC) &_rgrids_getCell1d, 4},
@@ -166,6 +210,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_blockmean", (DL_FUNC) &_rgrids_blockmean, 5},
     {"_rgrids_blockmax", (DL_FUNC) &_rgrids_blockmax, 5},
     {"_rgrids_blockmin", (DL_FUNC) &_rgrids_blockmin, 5},
+    {"_rgrids_rowMax", (DL_FUNC) &_rgrids_rowMax, 1},
+    {"_rgrids_rowMin", (DL_FUNC) &_rgrids_rowMin, 1},
+    {"_rgrids_colMax", (DL_FUNC) &_rgrids_colMax, 1},
+    {"_rgrids_colMin", (DL_FUNC) &_rgrids_colMin, 1},
     {NULL, NULL, 0}
 };
 
