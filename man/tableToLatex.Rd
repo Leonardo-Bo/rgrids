@@ -22,5 +22,5 @@ Text on terminal or on a file to copy in LaTeX environment
 \description{
 Given a numeric matrix, a data.frame, a tibble or a data.table
     returns a basic LaTeX table write with table and tabular packages.
-    Rownames and colnames are highlighted with `\textbf{}`.
+    Rownames and colnames are highlighted with bold.
 }
