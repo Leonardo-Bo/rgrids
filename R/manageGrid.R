@@ -44,7 +44,7 @@ getCell <- function(grid, points) {
     return(cell)
   }
 
-  if (class(object)[1] == "Grid3d") {
+  if (class(grid)[1] == "Grid3d") {
     x <- points[,1]
     y <- points[,2]
     z <- points[,3]
