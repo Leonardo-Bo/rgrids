@@ -66,10 +66,9 @@ The purpose of `rgrids` is to collect a not too large number of functions that w
     ```r
     library(rgrids)
 
-    df_points <- data.frame(x = c(rnorm(n = 50000, mean = -2), 
-                                  rnorm(n = 50000, mean = 2)), 
-                            y = c(rnorm(n = 50000, mean = 1), 
-                                  rnorm(n = 50000, mean = -1))
+    df_points <- data.frame(
+        x = c(rnorm(n = 50000, mean = -2), rnorm(n = 50000, mean = 2)), 
+        y = c(rnorm(n = 50000, mean = 1), rnorm(n = 50000, mean = -1))
     ) 
     ```
 
@@ -77,10 +76,8 @@ The purpose of `rgrids` is to collect a not too large number of functions that w
 
     ```r
     the_grid <- makeGrid2d(
-        xmin = floor(min(df_points$x)), 
-        ymin = floor(min(df_points$y)), 
-        xmax = ceiling(max(df_points$x)), 
-        ymax = ceiling(max(df_points$y)), 
+        xmin = floor(min(df_points$x)), ymin = floor(min(df_points$y)), 
+        xmax = ceiling(max(df_points$x)), ymax = ceiling(max(df_points$y)), 
         xcell = 50, ycell = 50
     )
     ```
@@ -258,14 +255,12 @@ A performance comparison with `apply` using the `bench` package
 mat3 <- matrix(runif(500000), ncol = 500)
 
 rowMax2 <- function(mat) {
-  df_rowMax <- data.frame(value = apply(mat, 1, max), 
-                          index = apply(mat, 1, which.max))
+  df_rowMax <- data.frame(value = apply(mat, 1, max), index = apply(mat, 1, which.max))
   return(df_rowMax)
 }
 
 colMax2 <- function(mat) {
-  df_colMax <- data.frame(value = apply(mat, 2, max), 
-                          index = apply(mat, 2, which.max))
+  df_colMax <- data.frame(value = apply(mat, 2, max), index = apply(mat, 2, which.max))
   return(df_colMax)
 }
 ```
