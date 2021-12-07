@@ -1,6 +1,6 @@
 # rgrids
 [![Version](https://img.shields.io/badge/Version-0.3.0-orange)](https://github.com/Leonardo-Bo/rgrids)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Leonardo-Bo/rgrids)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Leonardo-Bo/rgrids/blob/master/LICENSE.md)
 
 #
 ### Overview
