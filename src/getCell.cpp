@@ -25,7 +25,7 @@ NumericVector getCell1d(
     if (col < 0 || col >= xcell) {
       result[i] = NA_REAL;
     } else {
-      result[i] = col + 1 ;
+      result[i] = col + 1;
     }
   }
   return result;

@@ -5,7 +5,7 @@
 \title{Get index of a point}
 \usage{
 # Call getCell
-# getCell(Grid2d, points)
+getCell(Grid2d, points)
 }
 \arguments{
 \item{grid}{Grid1d, Grid2d or Grid3d object, made with makeGrid* function}
@@ -17,8 +17,27 @@ A vector of index
 }
 \description{
 Given a grid object (Grid1d, Grid2d or Grid3d) and a matrix or
-    dataframe of points, return the index of each point in the grid. For a
-    1d grid it is counted from left to right; for a 2d grid it is counted
-    from top-left corner to bottom-right corner; for a 3d grid for each layer
-    it is counted like 2d grid and layers increase from top to bottom
+    dataframe of points, it returns the index of each point in the grid.
+    For a 1d grid it is counted from min to max; for a 2d grid it is counted
+    from xmin, ymin to xmax, ymax choosing whether to increase x or y faster;
+    for a 3d grid it is counted from xmin, ymin, zmin to xmax, ymax, zmax
+    choosing whether to increase x or z faster.
+}
+\examples{
+# 1. Generate random points on a plane
+df_points <- data.frame(
+  x = c(rnorm(n = 50000, mean = -2), rnorm(n = 50000, mean = 2)),
+  y = c(rnorm(n = 50000, mean = 1), rnorm(n = 50000, mean = -1))
+)
+
+# 2. Define a grid that contains all the points generated
+the_grid <- makeGrid2d(
+  xmin = floor(min(df_points$x)), ymin = floor(min(df_points$y)),
+  xmax = ceiling(max(df_points$x)), ymax = ceiling(max(df_points$y)),
+  xcell = 50, ycell = 50
+)
+
+# 3. Match each point with a grid element
+grid_index <- getCell(the_grid, df_points)
+df_points$grid_index <- grid_index
 }
