@@ -6,23 +6,26 @@
 \title{Grid2d class}
 \usage{
 # Create S4 object with the following default values
-# makeGrid2d(xmin = -5, xmax = 5,
-#            ymin = -5, ymax = 5,
-#            xcell = 10, ycell = 10)
+makeGrid2d(xmin = -5, xmax = 5,
+           ymin = -5, ymax = 5,
+           xcell = 10, ycell = 10,
+           by = "h")
 }
 \value{
 A two-dimensional grid
 }
 \description{
 Given the extremes of the range and the number of cells along x
-    and y, it generates a two-dimensional grid.
+    and y, it generates a two-dimensional grid. Cells are counted from the
+    minimum of x and y (bottom-left). You can choose whether to increase
+    x or y faster.
 }
 \section{Slots}{
 
 \describe{
-\item{\code{xcell}}{xcell numeric, number of cells along x}
+\item{\code{xcell}}{numeric, number of cells along x}
 
-\item{\code{ycell}}{ycell numeric, number of cells along y}
+\item{\code{ycell}}{numeric, number of cells along y}
 
 \item{\code{xmin}}{numeric, lower limit along x}
 
@@ -31,15 +34,20 @@ Given the extremes of the range and the number of cells along x
 \item{\code{ymin}}{numeric, lower limit along y}
 
 \item{\code{ymax}}{numeric, upper limit along y}
+
+\item{\code{by}}{character, count cells increasing x ("h") or y ("v") faster}
 }}
 
 \examples{
-# grid2d <- makeGrid2d(xmin = -50, xmax = 50,
-#                      ymin = -50, ymax = 50,
-#                      xcell = 100, ycell = 100)
+grid2d <- makeGrid2d(xmin = -50, xmax = 50,
+                     ymin = -50, ymax = 50,
+                     xcell = 100, ycell = 100)
+
 # grid2d
-# class      : Grid2d
-# dimensions : xcell = 100, ycell = 100, ncell = 10000
-# range      : xmin = -50, xmax = 50
-#              ymin = -50, ymax = 50
+class      : Grid2d
+dimensions : xcell = 100, ycell = 100, ncell = 10000
+range      : xmin = -50, xmax = 50
+             ymin = -50, ymax = 50
+by         : h, count starts from xmin, ymin (bottom-left)
+             and x increase faster
 }

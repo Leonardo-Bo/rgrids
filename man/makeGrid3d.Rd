@@ -6,26 +6,28 @@
 \title{Grid3d class}
 \usage{
 # Create S4 object with the following default values
-# makeGrid1d(xmin = -5, xmax = 5,
-#            ymin = -5, ymax = 5,
-#            zmin = -5, zmax = 5,
-#            xcell = 10, ycell = 10, zcell = 10)
+makeGrid3d(xmin = -5, xmax = 5,
+           ymin = -5, ymax = 5,
+           zmin = -5, zmax = 5,
+           xcell = 10, ycell = 10, zcell = 10
+           by = "h")
 }
 \value{
 A three-dimensional grid
 }
 \description{
 Given the extremes of the range and the number of cells along x
-    y, and z it generates a three-dimensional grid.
+    y and z, it generates a three-dimensional grid. Cells are counted from the
+    minimum of x, y and z. You can choose whether to increase x or z faster.
 }
 \section{Slots}{
 
 \describe{
-\item{\code{xcell}}{xcell numeric, number of cells along x}
+\item{\code{xcell}}{numeric, number of cells along x}
 
-\item{\code{ycell}}{ycell numeric, number of cells along y}
+\item{\code{ycell}}{numeric, number of cells along y}
 
-\item{\code{zcell}}{zcell numeric, number of cells along z}
+\item{\code{zcell}}{numeric, number of cells along z}
 
 \item{\code{xmin}}{numeric, lower limit along x}
 
@@ -38,17 +40,23 @@ Given the extremes of the range and the number of cells along x
 \item{\code{zmin}}{numeric, lower limit along z}
 
 \item{\code{zmax}}{numeric, upper limit along z}
+
+\item{\code{by}}{character, count cells increasing x ("h") or z ("v") faster}
 }}
 
 \examples{
-# grid3d <- makeGrid3d(xmin = -50, xmax = 50,
-#                      ymin = -50, ymax = 50,
-#                      zmin = -50, zmax = 50,
-#                      xcell = 100, ycell = 100, zcell = 100)
+grid3d <- makeGrid3d(xmin = -50, xmax = 50,
+                     ymin = -50, ymax = 50,
+                     zmin = -50, zmax = 50,
+                     xcell = 4, ycell = 5, zcell = 6
+                     by = "v")
+
 # grid3d
-# class      : Grid3d
-# dimensions : xcell = 100, ycell = 100, zcell = 100, ncell = 1e+06
-# range      : xmin = -50, xmax = 50
-#              ymin = -50, ymax = 50
-#              zmin = -50, zmax = 50
+class      : Grid3d
+dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120
+range      : xmin = -50, xmax = 50
+             ymin = -50, ymax = 50
+             zmin = -50, zmax = 50
+by         : v, count starts from xmin, ymin, zmin; "
+             z increase faster, x slower"
 }

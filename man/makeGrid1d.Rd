@@ -6,14 +6,15 @@
 \title{Grid1d class}
 \usage{
 # Create S4 object with the following default values
-# makeGrid1d(xmin = -5, xmax = 5, xcell = 10)
+makeGrid1d(xmin = -5, xmax = 5, xcell = 10)
 }
 \value{
 A uni-dimensional grid
 }
 \description{
 Given the extremes of the range and the number of cells, it
-    generates a one-dimensional grid.
+    generates a one-dimensional grid. Cells are counted from minimum to
+    maximum (left to right).
 }
 \section{Slots}{
 
@@ -26,9 +27,10 @@ Given the extremes of the range and the number of cells, it
 }}
 
 \examples{
-# grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
+grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
+
 # grid1d
-# class      : Grid1d
-# dimensions : xcell = 100
-# range      : xmin = -50, xmax = 50
+class      : Grid1d
+dimensions : xcell = 100
+range      : xmin = -50, xmax = 50
 }
