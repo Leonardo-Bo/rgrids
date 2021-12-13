@@ -37,7 +37,7 @@ grid2d <- makeGrid2d(xmin = -50, xmax = 50,
                      xcell = 100, ycell = 100,
                      by = "v")
 
-# grid2d
+grid2d
 # class      : Grid2d
 # dimensions : xcell = 100, ycell = 100, ncell = 10000
 # range      : xmin = -50, xmax = 50

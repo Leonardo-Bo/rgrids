@@ -15,7 +15,7 @@
 #' @examples
 #' grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
 #'
-#' # grid1d
+#' grid1d
 #' # class      : Grid1d
 #' # dimensions : xcell = 100
 #' # range      : xmin = -50, xmax = 50
@@ -81,7 +81,7 @@ makeGrid1d <- setClass(
 #'                      xcell = 100, ycell = 100,
 #'                      by = "v")
 #'
-#' # grid2d
+#' grid2d
 #' # class      : Grid2d
 #' # dimensions : xcell = 100, ycell = 100, ncell = 10000
 #' # range      : xmin = -50, xmax = 50
@@ -162,7 +162,7 @@ makeGrid2d <- setClass(
 #'                      xcell = 4, ycell = 5, zcell = 6,
 #'                      by = "v")
 #'
-#' # grid3d
+#' grid3d
 #' # class      : Grid3d
 #' # dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120
 #' # range      : xmin = -50, xmax = 50
