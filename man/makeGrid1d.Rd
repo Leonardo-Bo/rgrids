@@ -4,10 +4,6 @@
 \name{makeGrid1d}
 \alias{makeGrid1d}
 \title{Grid1d class}
-\usage{
-# Create S4 object with the following default values
-makeGrid1d(xmin = -5, xmax = 5, xcell = 10)
-}
 \value{
 A uni-dimensional grid
 }
@@ -30,7 +26,14 @@ Given the extremes of the range and the number of cells, it
 grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
 
 # grid1d
-class      : Grid1d
-dimensions : xcell = 100
-range      : xmin = -50, xmax = 50
+# class      : Grid1d
+# dimensions : xcell = 100
+# range      : xmin = -50, xmax = 50
+
+
+makeGrid1d()
+
+# class      : Grid1d
+# dimension  : xcell = 10
+# range      : xmin = -5, xmax = 5
 }

@@ -2,10 +2,9 @@
 % Please edit documentation in R/manageGrid.R
 \name{getCell}
 \alias{getCell}
-\title{Get index of a point}
+\title{Get grid index of each point}
 \usage{
-# Call getCell
-getCell(Grid2d, points)
+getCell(grid, points)
 }
 \arguments{
 \item{grid}{Grid1d, Grid2d or Grid3d object, made with makeGrid* function}
@@ -13,15 +12,17 @@ getCell(Grid2d, points)
 \item{points}{vector for 1d Grid, matrix or dataframe of points for 2d 3d Grid}
 }
 \value{
-A vector of index
+A vector in which the i-th element represents the index of the grid cell to
+which the i-th point belongs
 }
 \description{
 Given a grid object (Grid1d, Grid2d or Grid3d) and a matrix or
     dataframe of points, it returns the index of each point in the grid.
     For a 1d grid it is counted from min to max; for a 2d grid it is counted
-    from xmin, ymin to xmax, ymax choosing whether to increase x or y faster;
-    for a 3d grid it is counted from xmin, ymin, zmin to xmax, ymax, zmax
-    choosing whether to increase x or z faster.
+    from xmin, ymin to xmax, ymax increasing x or y faster according to the
+    "by" parameter of the grid; for a 3d grid it is counted from xmin, ymin,
+    zmin to xmax, ymax, zmax increasing x or z faster according to the "by"
+    parameter of the grid.
 }
 \examples{
 # 1. Generate random points on a plane
@@ -34,7 +35,7 @@ df_points <- data.frame(
 the_grid <- makeGrid2d(
   xmin = floor(min(df_points$x)), ymin = floor(min(df_points$y)),
   xmax = ceiling(max(df_points$x)), ymax = ceiling(max(df_points$y)),
-  xcell = 50, ycell = 50
+  xcell = 50, ycell = 50, by = "v"
 )
 
 # 3. Match each point with a grid element

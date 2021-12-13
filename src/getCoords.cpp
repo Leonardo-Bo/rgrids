@@ -25,7 +25,7 @@ NumericVector getCoords1d(
 NumericMatrix getCoords2d(
     unsigned xcell, unsigned ycell,
     double xmin, double xmax, double ymin, double ymax,
-    NumericVector cell) {
+    String by, NumericVector cell) {
 
   size_t len = cell.size();
 
@@ -34,12 +34,22 @@ NumericMatrix getCoords2d(
 
   NumericMatrix result(len, 2);
 
-  for (size_t i = 0; i < len; i++) {
-    double c = cell[i] - 1;
-    double row = floor(c / xcell);
-    double col = c - row * xcell;
-    result(i,0) = (col + 0.5) * scale_x1 + xmin;
-    result(i,1) = ymax - (row + 0.5) * scale_y1;
+  if (by == "h") {
+    for (size_t i = 0; i < len; i++) {
+      double c = cell[i] - 1;
+      double row = floor(c / xcell);
+      double col = c - row * xcell;
+      result(i,0) = (col + 0.5) * scale_x1 + xmin;
+      result(i,1) = (row + 0.5) * scale_y1 + ymin;
+    }
+  } else {
+    for (size_t i = 0; i < len; i++) {
+      double c = cell[i] - 1;
+      double col = floor(c / ycell);
+      double row = c - col * ycell;
+      result(i,0) = (col + 0.5) * scale_x1 + xmin;
+      result(i,1) = (row + 0.5) * scale_y1 + ymin;
+    }
   }
 
   return result;
@@ -52,7 +62,7 @@ NumericMatrix getCoords3d(
     double xmin, double xmax,
     double ymin, double ymax,
     double zmin, double zmax,
-    NumericVector cell) {
+    String by, NumericVector cell) {
 
   size_t len = cell.size();
 
@@ -62,14 +72,26 @@ NumericMatrix getCoords3d(
 
   NumericMatrix result(len, 3);
 
-  for (size_t i = 0; i < len; i++) {
-    int c = cell[i] - 1;
-    int col = c % xcell;
-    int row = ((c - col) / xcell) % ycell;
-    int layer = (((c - col) / xcell ) - row) / ycell;
-    result(i,0) = (col + 0.5) * scale_x1 + xmin;
-    result(i,1) = ymax - (row + 0.5) * scale_y1;
-    result(i,2) = zmax - (layer + 0.5) * scale_z1;
+  if (by == "h") {
+    for (size_t i = 0; i < len; i++) {
+      int c = cell[i] - 1;
+      int col = c % xcell;
+      int row = ((c - col) / xcell) % ycell;
+      int layer = (((c - col) / xcell ) - row) / ycell;
+      result(i,0) = (col + 0.5) * scale_x1 + xmin;
+      result(i,1) = (row + 0.5) * scale_y1 + ymin;
+      result(i,2) = (layer + 0.5) * scale_z1 + zmin;
+    }
+  } else {
+    for (size_t i = 0; i < len; i++) {
+      int c = cell[i] - 1;
+      int layer = c % zcell;
+      int row = ((c - layer) / zcell) % ycell;
+      int col = (((c - layer) / zcell ) - row) / ycell;
+      result(i,0) = (col + 0.5) * scale_x1 + xmin;
+      result(i,1) = (row + 0.5) * scale_y1 + ymin;
+      result(i,2) = (layer + 0.5) * scale_z1 + zmin;
+    }
   }
 
   return result;

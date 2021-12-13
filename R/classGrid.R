@@ -10,18 +10,22 @@
 #' @slot xmin numeric, lower limit
 #' @slot xmax numeric, upper limit
 #'
-#' @usage
-#' # Create S4 object with the following default values
-#' makeGrid1d(xmin = -5, xmax = 5, xcell = 10)
 #' @return
 #' A uni-dimensional grid
 #' @examples
 #' grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
 #'
 #' # grid1d
-#' class      : Grid1d
-#' dimensions : xcell = 100
-#' range      : xmin = -50, xmax = 50
+#' # class      : Grid1d
+#' # dimensions : xcell = 100
+#' # range      : xmin = -50, xmax = 50
+#'
+#'
+#' makeGrid1d()
+#'
+#' # class      : Grid1d
+#' # dimension  : xcell = 10
+#' # range      : xmin = -5, xmax = 5
 #' @export makeGrid1d
 makeGrid1d <- setClass(
   "Grid1d",
@@ -69,26 +73,31 @@ makeGrid1d <- setClass(
 #' @slot ymax numeric, upper limit along y
 #' @slot by character, count cells increasing x ("h") or y ("v") faster
 #'
-#' @usage
-#' # Create S4 object with the following default values
-#' makeGrid2d(xmin = -5, xmax = 5,
-#'            ymin = -5, ymax = 5,
-#'            xcell = 10, ycell = 10,
-#'            by = "h")
 #' @return
 #' A two-dimensional grid
 #' @examples
 #' grid2d <- makeGrid2d(xmin = -50, xmax = 50,
 #'                      ymin = -50, ymax = 50,
-#'                      xcell = 100, ycell = 100)
+#'                      xcell = 100, ycell = 100,
+#'                      by = "v")
 #'
 #' # grid2d
-#' class      : Grid2d
-#' dimensions : xcell = 100, ycell = 100, ncell = 10000
-#' range      : xmin = -50, xmax = 50
-#'              ymin = -50, ymax = 50
-#' by         : h, count starts from xmin, ymin (bottom-left)
-#'              and x increase faster
+#' # class      : Grid2d
+#' # dimensions : xcell = 100, ycell = 100, ncell = 10000
+#' # range      : xmin = -50, xmax = 50
+#' #              ymin = -50, ymax = 50
+#' # by         : v, count starts from xmin, ymin (bottom-left)
+#' #              and y increase faster
+#'
+#'
+#' makeGrid2d()
+#'
+#' # class      : Grid2d
+#' # dimensions : xcell = 10, ycell = 10, ncell = 100
+#' # range      : xmin = -5, xmax = 5
+#' #              ymin = -5, ymax = 5
+#' # by         : h, count starts from xmin, ymin (bottom-left)
+#' #              and x increase faster
 #' @export makeGrid2d
 makeGrid2d <- setClass(
   "Grid2d",
@@ -144,30 +153,34 @@ makeGrid2d <- setClass(
 #' @slot zmax numeric, upper limit along z
 #' @slot by character, count cells increasing x ("h") or z ("v") faster
 #'
-#' @usage
-#' # Create S4 object with the following default values
-#' makeGrid3d(xmin = -5, xmax = 5,
-#'            ymin = -5, ymax = 5,
-#'            zmin = -5, zmax = 5,
-#'            xcell = 10, ycell = 10, zcell = 10
-#'            by = "h")
 #' @return
 #' A three-dimensional grid
 #' @examples
 #' grid3d <- makeGrid3d(xmin = -50, xmax = 50,
 #'                      ymin = -50, ymax = 50,
 #'                      zmin = -50, zmax = 50,
-#'                      xcell = 4, ycell = 5, zcell = 6
+#'                      xcell = 4, ycell = 5, zcell = 6,
 #'                      by = "v")
 #'
 #' # grid3d
-#' class      : Grid3d
-#' dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120
-#' range      : xmin = -50, xmax = 50
-#'              ymin = -50, ymax = 50
-#'              zmin = -50, zmax = 50
-#' by         : v, count starts from xmin, ymin, zmin; "
-#'              z increase faster, x slower"
+#' # class      : Grid3d
+#' # dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120
+#' # range      : xmin = -50, xmax = 50
+#' #              ymin = -50, ymax = 50
+#' #              zmin = -50, zmax = 50
+#' # by         : v, count starts from xmin, ymin, zmin;
+#' #              z increase faster, x slower"
+#'
+#'
+#' makeGrid3d()
+#'
+#' # class      : Grid3d
+#' # dimensions : xcell = 5, ycell = 5, zcell = 5, ncell = 125
+#' # range      : xmin = -5, xmax = 5
+#' #              ymin = -5, ymax = 5
+#' #              zmin = -5, zmax = 5
+#' # by         : h, count starts from xmin, ymin, zmin;
+#' #              x increase faster, z slower"
 #' @export makeGrid3d
 makeGrid3d <- setClass(
   "Grid3d",

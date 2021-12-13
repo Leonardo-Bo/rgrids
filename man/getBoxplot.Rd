@@ -4,8 +4,7 @@
 \alias{getBoxplot}
 \title{Get dataframe to boxplot}
 \usage{
-# Call getBoxplot
-# getBoxplot(Grid1d, df_points)
+getBoxplot(grid, points)
 }
 \arguments{
 \item{grid}{Grid1d object, made with makeGrid1d function}
@@ -17,7 +16,22 @@ A dataframe with three columns: xbp (x relative to boxplot), x and y
 (original points)
 }
 \description{
-Given a Grid1d class object and a 2d dataframe of points
-    return original dataframe with supplementary column that group y points
-    to boxplot analysis.
+Given a Grid1d class object and a matrix or dataframe of points,
+    it returns a dataframe with original points and a supplementary column
+    which groups the y points that fall in the same vertical strip.
+}
+\examples{
+# 1. Generate random points on a plane
+df_points <- data.frame(
+  x = c(rnorm(n = 50000, mean = -2), rnorm(n = 50000, mean = 2)),
+  y = c(rnorm(n = 50000, mean = 1), rnorm(n = 50000, mean = -1))
+)
+
+# 2. Define a grid that contains all the points generated along x
+stripes <- makeGrid1d(
+  xmin = floor(min(df_points$x)), xmax = ceiling(max(df_points$x)), xcell = 50
+)
+
+# 3. Obtain boxplot dataframe
+df_boxplot <- getBoxplot(stripes, df_points)
 }

@@ -2,10 +2,9 @@
 % Please edit documentation in R/manageGrid.R
 \name{getCounts}
 \alias{getCounts}
-\title{Get dataframe of counts}
+\title{Get point count of each cell}
 \usage{
-# Call getCounts
-# getCounts(Grid2d, indexCell)
+getCounts(grid, indexCell)
 }
 \arguments{
 \item{grid}{Grid1d, Grid2d or Grid3d object, made with makeGrid* function}
@@ -13,10 +12,32 @@
 \item{indexCell}{vector of index made with getCell()}
 }
 \value{
-A dataframe with coordinates and counts
+A dataframe with grid coordinates and and the count of how many
+points fall within each cell of the grid
 }
 \description{
-Given a grid object (Grid1d, Grid2d or Grid3d) and a index of
-    each cell point in the grid obtained by getCell(), return a dataframe
-    with coordinates and counts for each cell.
+Given a grid object (Grid1d, Grid2d or Grid3d) and an index of
+    each cell point in the grid obtained by getCell(), it returns a dataframe
+    with coordinates and counts for each cell. According to the "by" parameter
+    of the grid, the coordinates will be sorted with x or z increasing faster.
+}
+\examples{
+# 1. Generate random points on a plane
+df_points <- data.frame(
+  x = c(rnorm(n = 50000, mean = -2), rnorm(n = 50000, mean = 2)),
+  y = c(rnorm(n = 50000, mean = 1), rnorm(n = 50000, mean = -1))
+)
+
+# 2. Define a grid that contains all the points generated
+the_grid <- makeGrid2d(
+  xmin = floor(min(df_points$x)), ymin = floor(min(df_points$y)),
+  xmax = ceiling(max(df_points$x)), ymax = ceiling(max(df_points$y)),
+  xcell = 50, ycell = 50, by = "v"
+)
+
+# 3. Match each point with a grid element
+grid_index <- getCell(the_grid, df_points)
+
+# 4. Count how many points there are in each element of the grid
+df_grid <- getCounts(the_grid, grid_index)
 }

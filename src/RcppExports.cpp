@@ -25,8 +25,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // getCell2d
-NumericVector getCell2d(int xcell, int ycell, double xmin, double xmax, double ymin, double ymax, NumericVector x, NumericVector y);
-RcppExport SEXP _rgrids_getCell2d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP xSEXP, SEXP ySEXP) {
+NumericVector getCell2d(int xcell, int ycell, double xmin, double xmax, double ymin, double ymax, String by, NumericVector x, NumericVector y);
+RcppExport SEXP _rgrids_getCell2d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP bySEXP, SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,15 +36,16 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
     Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
+    Rcpp::traits::input_parameter< String >::type by(bySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(getCell2d(xcell, ycell, xmin, xmax, ymin, ymax, x, y));
+    rcpp_result_gen = Rcpp::wrap(getCell2d(xcell, ycell, xmin, xmax, ymin, ymax, by, x, y));
     return rcpp_result_gen;
 END_RCPP
 }
 // getCell3d
-NumericVector getCell3d(int xcell, int ycell, int zcell, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, NumericVector x, NumericVector y, NumericVector z);
-RcppExport SEXP _rgrids_getCell3d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP zcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP zminSEXP, SEXP zmaxSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP) {
+NumericVector getCell3d(int xcell, int ycell, int zcell, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, String by, NumericVector x, NumericVector y, NumericVector z);
+RcppExport SEXP _rgrids_getCell3d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP zcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP zminSEXP, SEXP zmaxSEXP, SEXP bySEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -57,10 +58,11 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
     Rcpp::traits::input_parameter< double >::type zmin(zminSEXP);
     Rcpp::traits::input_parameter< double >::type zmax(zmaxSEXP);
+    Rcpp::traits::input_parameter< String >::type by(bySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type z(zSEXP);
-    rcpp_result_gen = Rcpp::wrap(getCell3d(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, x, y, z));
+    rcpp_result_gen = Rcpp::wrap(getCell3d(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, by, x, y, z));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -79,8 +81,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // getCoords2d
-NumericMatrix getCoords2d(unsigned xcell, unsigned ycell, double xmin, double xmax, double ymin, double ymax, NumericVector cell);
-RcppExport SEXP _rgrids_getCoords2d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP cellSEXP) {
+NumericMatrix getCoords2d(unsigned xcell, unsigned ycell, double xmin, double xmax, double ymin, double ymax, String by, NumericVector cell);
+RcppExport SEXP _rgrids_getCoords2d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP bySEXP, SEXP cellSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -90,14 +92,15 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
     Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
+    Rcpp::traits::input_parameter< String >::type by(bySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);
-    rcpp_result_gen = Rcpp::wrap(getCoords2d(xcell, ycell, xmin, xmax, ymin, ymax, cell));
+    rcpp_result_gen = Rcpp::wrap(getCoords2d(xcell, ycell, xmin, xmax, ymin, ymax, by, cell));
     return rcpp_result_gen;
 END_RCPP
 }
 // getCoords3d
-NumericMatrix getCoords3d(int xcell, int ycell, int zcell, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, NumericVector cell);
-RcppExport SEXP _rgrids_getCoords3d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP zcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP zminSEXP, SEXP zmaxSEXP, SEXP cellSEXP) {
+NumericMatrix getCoords3d(int xcell, int ycell, int zcell, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, String by, NumericVector cell);
+RcppExport SEXP _rgrids_getCoords3d(SEXP xcellSEXP, SEXP ycellSEXP, SEXP zcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP zminSEXP, SEXP zmaxSEXP, SEXP bySEXP, SEXP cellSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -110,8 +113,9 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
     Rcpp::traits::input_parameter< double >::type zmin(zminSEXP);
     Rcpp::traits::input_parameter< double >::type zmax(zmaxSEXP);
+    Rcpp::traits::input_parameter< String >::type by(bySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);
-    rcpp_result_gen = Rcpp::wrap(getCoords3d(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, cell));
+    rcpp_result_gen = Rcpp::wrap(getCoords3d(xcell, ycell, zcell, xmin, xmax, ymin, ymax, zmin, zmax, by, cell));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -207,11 +211,11 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_getCell1d", (DL_FUNC) &_rgrids_getCell1d, 4},
-    {"_rgrids_getCell2d", (DL_FUNC) &_rgrids_getCell2d, 8},
-    {"_rgrids_getCell3d", (DL_FUNC) &_rgrids_getCell3d, 12},
+    {"_rgrids_getCell2d", (DL_FUNC) &_rgrids_getCell2d, 9},
+    {"_rgrids_getCell3d", (DL_FUNC) &_rgrids_getCell3d, 13},
     {"_rgrids_getCoords1d", (DL_FUNC) &_rgrids_getCoords1d, 4},
-    {"_rgrids_getCoords2d", (DL_FUNC) &_rgrids_getCoords2d, 7},
-    {"_rgrids_getCoords3d", (DL_FUNC) &_rgrids_getCoords3d, 10},
+    {"_rgrids_getCoords2d", (DL_FUNC) &_rgrids_getCoords2d, 8},
+    {"_rgrids_getCoords3d", (DL_FUNC) &_rgrids_getCoords3d, 11},
     {"_rgrids_blockmean", (DL_FUNC) &_rgrids_blockmean, 5},
     {"_rgrids_blockmax", (DL_FUNC) &_rgrids_blockmax, 5},
     {"_rgrids_blockmin", (DL_FUNC) &_rgrids_blockmin, 5},
