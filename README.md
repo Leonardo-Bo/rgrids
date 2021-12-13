@@ -1,5 +1,5 @@
 # rgrids
-[![Version](https://img.shields.io/badge/Version-0.3.0-orange)](https://github.com/Leonardo-Bo/rgrids)
+[![Version](https://img.shields.io/badge/Version-0.4.0-orange)](https://github.com/Leonardo-Bo/rgrids)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Leonardo-Bo/rgrids/blob/master/LICENSE.md)
 
 #
@@ -78,7 +78,7 @@ The purpose of `rgrids` is to collect a not too large number of functions that w
     the_grid <- makeGrid2d(
         xmin = floor(min(df_points$x)), ymin = floor(min(df_points$y)), 
         xmax = ceiling(max(df_points$x)), ymax = ceiling(max(df_points$y)), 
-        xcell = 50, ycell = 50
+        xcell = 50, ycell = 50, by = "v"
     )
     ```
     
@@ -87,6 +87,8 @@ The purpose of `rgrids` is to collect a not too large number of functions that w
     dimensions : xcell = 50, ycell = 50, ncell = 2500
     range      : xmin = -7, xmax = 7
                  ymin = -6, ymax = 6
+    by         : v, count starts from xmin, ymin (bottom-left)
+                 and y increase faster
     ```
     
 3. Match each point with a grid element
