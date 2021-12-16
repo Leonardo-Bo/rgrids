@@ -61,7 +61,7 @@ blockmean <- function(mat, block) {
 #' @return
 #' A new reduced matrix with max value of each block
 #'
-#' #' @examples
+#' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' blockmax(mat, 2) # or blockmax(mat, c(2, 2))
