@@ -10,11 +10,22 @@
 #' @param file If TRUE write file with object name in work directory. Default FALSE
 #' @param double_space If TRUE add empty columns to increase space between columns
 #'
-#' @usage
-#' # Call tableToLatex
-#' # tableToLatex(object)
 #' @return
 #' Text on terminal or on a file to copy in LaTeX environment
+#'
+#' @examples
+#' mat <- matrix(1:9, nrow = 3)
+#' # \begin{table}[htbp]
+#' # \centering
+#' # \begin{tabular}{ccc}
+#' # 1.000 & 4.000 & 7.000 \\
+#' # 2.000 & 5.000 & 8.000 \\
+#' # 3.000 & 6.000 & 9.000 \\
+#' # \end{tabular}
+#' # \caption{}
+#' # \label{}
+#' # \end{table}
+#'
 #' @export
 tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE) {
 

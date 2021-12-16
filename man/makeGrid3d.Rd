@@ -54,7 +54,6 @@ grid3d
 
 
 makeGrid3d()
-
 # class      : Grid3d
 # dimensions : xcell = 5, ycell = 5, zcell = 5, ncell = 125
 # range      : xmin = -5, xmax = 5

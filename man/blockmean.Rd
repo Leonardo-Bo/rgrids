@@ -19,3 +19,14 @@ A new reduced matrix with mean of each block
 Given a matrix and the size of a block, returns a new matrix
     containing the average of each block.
 }
+\examples{
+mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+
+blockmean(mat, 2) # or blockmean(mat, c(2, 2))
+#      [,1] [,2] [,3] [,4]
+# [1,]  5.5  7.5  9.5 11.5
+# [2,] 21.5 23.5 25.5 27.5
+# [3,] 37.5 39.5 41.5 43.5
+# [4,] 53.5 55.5 57.5 59.5
+
+}

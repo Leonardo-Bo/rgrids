@@ -32,8 +32,8 @@ grid1d
 
 
 makeGrid1d()
-
 # class      : Grid1d
 # dimension  : xcell = 10
 # range      : xmin = -5, xmax = 5
+
 }

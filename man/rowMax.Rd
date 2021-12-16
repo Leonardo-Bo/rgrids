@@ -4,11 +4,10 @@
 \alias{rowMax}
 \title{Find max for each row}
 \usage{
-# Call rowMax
-# rowMax(mat)
+rowMax(mat)
 }
 \arguments{
-\item{mat}{Matrix object}
+\item{mat}{numeric matrix}
 }
 \value{
 A dataframe with values and indices of max for each row
@@ -17,4 +16,14 @@ A dataframe with values and indices of max for each row
 Given a matrix, it returns a dataframe with two column:
     - first column are max values for each row of the original matrix
     - second column are indices of max values
+}
+\examples{
+mat <- matrix(1:9, nrow = 3)
+
+rowMax(mat)
+#   value index
+# 1     7     3
+# 2     8     3
+# 3     9     3
+
 }

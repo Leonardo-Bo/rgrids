@@ -26,3 +26,25 @@ first column is the row index of the original matrix, the second column is the
 column index of the original matrix, and the third column is the value of the
 original matrix element.
 }
+\examples{
+mat <- matrix(1:9, nrow = 3)
+
+pileMatrix(mat)
+#   row col value
+# 1   1   1     1
+# 2   2   1     2
+# 3   3   1     3
+# 4   1   2     4
+# 5   2   2     5
+# 6   3   2     6
+# 7   1   3     7
+# 8   2   3     8
+# 9   3   3     9
+
+pileMatrix(mat, subset = "u")
+# row col value
+# 1   1   2     4
+# 2   1   3     7
+# 3   2   3     8
+
+}

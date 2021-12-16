@@ -14,6 +14,16 @@ blockmax(mat, block)
 }
 \value{
 A new reduced matrix with max value of each block
+
+#' @examples
+mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+
+blockmax(mat, 2) # or blockmax(mat, c(2, 2))
+#      [,1] [,2] [,3] [,4]
+# [1,]   10   12   14   16
+# [2,]   26   28   30   32
+# [3,]   42   44   46   48
+# [4,]   58   60   62   64
 }
 \description{
 Given a matrix and the size of a block, returns a new matrix

@@ -4,8 +4,7 @@
 \alias{tableToLatex}
 \title{Convert R table in LaTeX table}
 \usage{
-# Call tableToLatex
-# tableToLatex(object)
+tableToLatex(object, digits = 3, file = FALSE, double_space = FALSE)
 }
 \arguments{
 \item{object}{A numeric matrix, data.frame, tibble or data.table}
@@ -23,4 +22,18 @@ Text on terminal or on a file to copy in LaTeX environment
 Given a numeric matrix, a data.frame, a tibble or a data.table
     returns a basic LaTeX table write with table and tabular packages.
     Rownames and colnames are highlighted with bold.
+}
+\examples{
+mat <- matrix(1:9, nrow = 3)
+# \begin{table}[htbp]
+# \centering
+# \begin{tabular}{ccc}
+# 1.000 & 4.000 & 7.000 \\
+# 2.000 & 5.000 & 8.000 \\
+# 3.000 & 6.000 & 9.000 \\
+# \end{tabular}
+# \caption{}
+# \label{}
+# \end{table}
+
 }

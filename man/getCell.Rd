@@ -41,4 +41,5 @@ the_grid <- makeGrid2d(
 # 3. Match each point with a grid element
 grid_index <- getCell(the_grid, df_points)
 df_points$grid_index <- grid_index
+
 }

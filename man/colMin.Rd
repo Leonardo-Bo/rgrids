@@ -4,8 +4,7 @@
 \alias{colMin}
 \title{Find min for each column}
 \usage{
-# Call colMin
-# colMin(mat)
+colMin(mat)
 }
 \arguments{
 \item{mat}{Matrix object}
@@ -17,4 +16,14 @@ A dataframe with values and indices of min for each column
 Given a matrix, it returns a dataframe with two column:
     - first column are min values for each column of the original matrix
     - second column are indices of min values
+}
+\examples{
+mat <- matrix(1:9, nrow = 3)
+
+rowMax(mat)
+#   value index
+# 1     1     1
+# 2     4     1
+# 3     7     1
+
 }

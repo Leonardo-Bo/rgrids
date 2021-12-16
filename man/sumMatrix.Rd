@@ -20,3 +20,15 @@ Given a list of matrices, returns a single matrix in which
     Given a list of vectors, returns a single vector in which element i is
     the sum of all corresponding elements i of all vectors in the list.
 }
+\examples{
+mat1 <- matrix(1:4, nrow = 2)
+mat2 <- matrix(5:8, nrow = 2)
+mat3 <- matrix(9:12, nrow = 2)
+list_matrix <- list(mat1, mat2, mat3)
+
+sumMatrix(list_matrix)
+#      [,1] [,2]
+# [1,]   15   21
+# [2,]   18   24
+
+}

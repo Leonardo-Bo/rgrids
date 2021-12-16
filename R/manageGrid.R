@@ -38,6 +38,7 @@ NULL
 #' # 3. Match each point with a grid element
 #' grid_index <- getCell(the_grid, df_points)
 #' df_points$grid_index <- grid_index
+#'
 #' @export
 getCell <- function(grid, points) {
   if (class(grid)[1] != "Grid1d" & class(grid)[1] != "Grid2d" & class(grid)[1] != "Grid3d") {
@@ -217,6 +218,7 @@ getCell <- function(grid, points) {
 #'
 #' @return A dataframe with grid coordinates and and the count of how many
 #' points fall within each cell of the grid
+#'
 #' @examples
 #' # 1. Generate random points on a plane
 #' df_points <- data.frame(
@@ -236,6 +238,7 @@ getCell <- function(grid, points) {
 #'
 #' # 4. Count how many points there are in each element of the grid
 #' df_grid <- getCounts(the_grid, grid_index)
+#'
 #' @export
 getCounts <- function(grid, indexCell) {
   if (class(grid)[1] != "Grid1d" & class(grid)[1] != "Grid2d" & class(grid)[1] != "Grid3d") {
@@ -294,6 +297,7 @@ getCounts <- function(grid, indexCell) {
 #' @return
 #' A dataframe with three columns: xbp (x relative to boxplot), x and y
 #' (original points)
+#'
 #' @examples
 #' # 1. Generate random points on a plane
 #' df_points <- data.frame(
@@ -308,6 +312,7 @@ getCounts <- function(grid, indexCell) {
 #'
 #' # 3. Obtain boxplot dataframe
 #' df_boxplot <- getBoxplot(stripes, df_points)
+#'
 #' @export
 getBoxplot <- function(grid, points) {
   if (class(grid)[1] != "Grid1d") {

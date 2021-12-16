@@ -5,17 +5,26 @@
 #'     - second column are indices of max values
 #'
 #' @name rowMax
-#' @param mat Matrix object
-#' @usage
-#' # Call rowMax
-#' # rowMax(mat)
+#'
+#' @param mat numeric matrix
+#'
 #' @return
 #' A dataframe with values and indices of max for each row
+#'
+#' @examples
+#' mat <- matrix(1:9, nrow = 3)
+#'
+#' rowMax(mat)
+#' #   value index
+#' # 1     7     3
+#' # 2     8     3
+#' # 3     9     3
+#'
 #' @export
 rowMax <- function(mat) {
-  c0 <- class(mat) == "matrix"
-  c1 <- typeof(mat) == "double" | typeof(mat) == "integer"
-  if (!c0 || !c1) {
+  c0 <- is.matrix(mat)
+  c1 <- is.numeric(mat)
+  if (!(c0 & c1)) {
     stop("mat must be a numeric matrix")
   }
   rowMax <- .rowMax(mat)
@@ -32,17 +41,26 @@ rowMax <- function(mat) {
 #'     - second column are indices of min values
 #'
 #' @name rowMin
+#'
 #' @param mat Matrix object
-#' @usage
-#' # Call rowMin
-#' # rowMin(mat)
+#'
 #' @return
 #' A dataframe with values and indices of min for each row
+#'
+#' @examples
+#' mat <- matrix(1:9, nrow = 3)
+#'
+#' rowMin(mat)
+#' #   value index
+#' # 1     1     1
+#' # 2     2     1
+#' # 3     3     1
+#'
 #' @export
 rowMin <- function(mat) {
-  c0 <- class(mat) == "matrix"
-  c1 <- typeof(mat) == "double" | typeof(mat) == "integer"
-  if (!c0 || !c1) {
+  c0 <- is.matrix(mat)
+  c1 <- is.numeric(mat)
+  if (!(c0 & c1)) {
     stop("mat must be a numeric matrix")
   }
   rowMin <- .rowMin(mat)
@@ -59,17 +77,26 @@ rowMin <- function(mat) {
 #'     - second column are indices of max values
 #'
 #' @name colMax
+#'
 #' @param mat Matrix object
-#' @usage
-#' # Call colMax
-#' # colMax(mat)
+#'
 #' @return
 #' A dataframe with values and indices of max for each column
+#'
+#' @examples
+#' mat <- matrix(1:9, nrow = 3)
+#'
+#' colMax(mat)
+#' #   value index
+#' # 1     3     3
+#' # 2     6     3
+#' # 3     9     3
+#'
 #' @export
 colMax <- function(mat) {
-  c0 <- class(mat) == "matrix"
-  c1 <- typeof(mat) == "double" | typeof(mat) == "integer"
-  if (!c0 || !c1) {
+  c0 <- is.matrix(mat)
+  c1 <- is.numeric(mat)
+  if (!(c0 & c1)) {
     stop("mat must be a numeric matrix")
   }
   colMax <- .colMax(mat)
@@ -86,17 +113,26 @@ colMax <- function(mat) {
 #'     - second column are indices of min values
 #'
 #' @name colMin
+#'
 #' @param mat Matrix object
-#' @usage
-#' # Call colMin
-#' # colMin(mat)
+#'
 #' @return
 #' A dataframe with values and indices of min for each column
+#'
+#' @examples
+#' mat <- matrix(1:9, nrow = 3)
+#'
+#' rowMax(mat)
+#' #   value index
+#' # 1     1     1
+#' # 2     4     1
+#' # 3     7     1
+#'
 #' @export
 colMin <- function(mat) {
-  c0 <- class(mat) == "matrix"
-  c1 <- typeof(mat) == "double" | typeof(mat) == "integer"
-  if (!c0 || !c1) {
+  c0 <- is.matrix(mat)
+  c1 <- is.numeric(mat)
+  if (!(c0 & c1)) {
     stop("mat must be a numeric matrix")
   }
   colMin <- .colMin(mat)

@@ -47,11 +47,11 @@ grid2d
 
 
 makeGrid2d()
-
 # class      : Grid2d
 # dimensions : xcell = 10, ycell = 10, ncell = 100
 # range      : xmin = -5, xmax = 5
 #              ymin = -5, ymax = 5
 # by         : h, count starts from xmin, ymin (bottom-left)
 #              and x increase faster
+
 }

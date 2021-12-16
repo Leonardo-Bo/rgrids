@@ -22,10 +22,10 @@
 #'
 #'
 #' makeGrid1d()
-#'
 #' # class      : Grid1d
 #' # dimension  : xcell = 10
 #' # range      : xmin = -5, xmax = 5
+#'
 #' @export makeGrid1d
 makeGrid1d <- setClass(
   "Grid1d",
@@ -91,13 +91,13 @@ makeGrid1d <- setClass(
 #'
 #'
 #' makeGrid2d()
-#'
 #' # class      : Grid2d
 #' # dimensions : xcell = 10, ycell = 10, ncell = 100
 #' # range      : xmin = -5, xmax = 5
 #' #              ymin = -5, ymax = 5
 #' # by         : h, count starts from xmin, ymin (bottom-left)
 #' #              and x increase faster
+#'
 #' @export makeGrid2d
 makeGrid2d <- setClass(
   "Grid2d",
@@ -173,7 +173,6 @@ makeGrid2d <- setClass(
 #'
 #'
 #' makeGrid3d()
-#'
 #' # class      : Grid3d
 #' # dimensions : xcell = 5, ycell = 5, zcell = 5, ncell = 125
 #' # range      : xmin = -5, xmax = 5

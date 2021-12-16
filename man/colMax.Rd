@@ -4,8 +4,7 @@
 \alias{colMax}
 \title{Find max for each column}
 \usage{
-# Call colMax
-# colMax(mat)
+colMax(mat)
 }
 \arguments{
 \item{mat}{Matrix object}
@@ -17,4 +16,14 @@ A dataframe with values and indices of max for each column
 Given a matrix, it returns a dataframe with two column:
     - first column are max values for each column of the original matrix
     - second column are indices of max values
+}
+\examples{
+mat <- matrix(1:9, nrow = 3)
+
+colMax(mat)
+#   value index
+# 1     3     3
+# 2     6     3
+# 3     9     3
+
 }

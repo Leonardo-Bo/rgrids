@@ -19,3 +19,22 @@ A list of diangonal submatrices made by blocks
 Given a matrix and the size of a block, returns a list
     containing all diagonal submatrices made by blocks.
 }
+\examples{
+mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+
+dblocklist(mat, 4)
+# $`1`
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    2    3    4
+# [2,]    9   10   11   12
+# [3,]   17   18   19   20
+# [4,]   25   26   27   28
+#
+# $`2`
+#      [,1] [,2] [,3] [,4]
+# [1,]   37   38   39   40
+# [2,]   45   46   47   48
+# [3,]   53   54   55   56
+# [4,]   61   62   63   64
+
+}
