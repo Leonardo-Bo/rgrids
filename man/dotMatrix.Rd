@@ -4,11 +4,10 @@
 \alias{dotMatrix}
 \title{Performs product of matrices or vectors}
 \usage{
-# Call dotMatrix
-# dotMatrix(matricesList)
+dotMatrix(matricesList)
 }
 \arguments{
-\item{matricesList}{A list of numeric matrices with same dimensions}
+\item{matricesList}{a list of numeric matrices with same dimensions}
 }
 \value{
 A matrix in which element (i,j) is the product of all corresponding elements

@@ -4,11 +4,10 @@
 \alias{pileMatrix}
 \title{Trasform matrix into dataframe}
 \usage{
-# Call pileMatrix
-# pileMatrix(mat, "full")
+pileMatrix(mat, subset = "full")
 }
 \arguments{
-\item{mat}{Matrix object}
+\item{mat}{numeric matrix}
 
 \item{subset}{character indicating which array elements to take. The possible choices are:
 "full": the whole matrix (default),

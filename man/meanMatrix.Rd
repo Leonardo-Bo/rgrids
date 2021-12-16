@@ -4,11 +4,10 @@
 \alias{meanMatrix}
 \title{Performs mean of matrices or vectors}
 \usage{
-# Call meanMatrix
-# meanMatrix(matricesList)
+meanMatrix(matricesList)
 }
 \arguments{
-\item{matricesList}{A list of numeric matrices with same dimensions}
+\item{matricesList}{a list of numeric matrices with same dimensions}
 }
 \value{
 A matrix in which element (i,j) is the average of all corresponding elements

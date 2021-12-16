@@ -67,12 +67,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // getCoords1d
-NumericVector getCoords1d(unsigned xcell, double xmin, double xmax, NumericVector cell);
+NumericVector getCoords1d(int xcell, double xmin, double xmax, NumericVector cell);
 RcppExport SEXP _rgrids_getCoords1d(SEXP xcellSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP cellSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned >::type xcell(xcellSEXP);
+    Rcpp::traits::input_parameter< int >::type xcell(xcellSEXP);
     Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
     Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type cell(cellSEXP);

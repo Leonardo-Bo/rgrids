@@ -42,7 +42,7 @@ makeGrid1d <- setClass(
    validity = function(object) {
      c1 <- (object@xmin < object@xmax)
      c2 <- (object@xcell > 0)
-     c3 <- ((object@xcell - as.integer(object@xcell)) == 0)
+     c3 <- is.integer(object@xcell)
 
      if (is.na(c1)) c1 <- TRUE
      if (is.na(c2)) c2 <- TRUE
@@ -117,7 +117,7 @@ makeGrid2d <- setClass(
   validity = function(object) {
     c4 <- (object@ymin < object@ymax)
     c5 <- (object@ycell > 0)
-    c6 <- ((object@ycell - as.integer(object@ycell)) == 0)
+    c6 <- is.integer(object@ycell)
     c7 <- (object@by == "h" | object@by == "v")
 
     if (is.na(c4)) c4 <- TRUE
@@ -198,7 +198,7 @@ makeGrid3d <- setClass(
   validity = function(object)	{
     c8 <- (object@zmin < object@zmax)
     c9 <- (object@zcell > 0)
-    c10 <- ((object@zcell - as.integer(object@zcell)) == 0)
+    c10 <- is.integer(object@zcell)
 
     if (is.na(c8)) c8 <- TRUE
     if (is.na(c9)) c9 <- TRUE

@@ -4,11 +4,10 @@
 \alias{sumMatrix}
 \title{Performs sum of matrices or vectors}
 \usage{
-# Call sumMatrix
-# sumMatrix(matricesList)
+sumMatrix(matricesList)
 }
 \arguments{
-\item{matricesList}{A list of numeric matrices with same dimensions}
+\item{matricesList}{a list of numeric matrices with same dimensions}
 }
 \value{
 A matrix in which element (i,j) is the sum of all corresponding elements

@@ -4,12 +4,11 @@
 #'     containing the average of each block.
 #'
 #' @name blockmean
-#' @param mat Matrix object
-#' @param block Integer vector of length 2, containing the size of the block
+#'
+#' @param mat numeric matrix
+#' @param block integer vector of length 2, containing the size of the block
 #' (rows, columns). If only one integer is passed, the block is square
-#' @usage
-#' # Call blockmean
-#' # blockmean(mat, block)
+#'
 #' @return
 #' A new reduced matrix with mean of each block
 #' @export
@@ -43,12 +42,11 @@ blockmean <- function(mat, block) {
 #'     containing the max value for each block.
 #'
 #' @name blockmax
-#' @param mat Matrix object
-#' @param block Integer vector of length 2, containing the size of the block
+#'
+#' @param mat numeric matrix
+#' @param block integer vector of length 2, containing the size of the block
 #' (rows, columns). If only one integer is passed, the block is square
-#' @usage
-#' # Call blockmax
-#' # blockmax(mat, block)
+#'
 #' @return
 #' A new reduced matrix with max value of each block
 #' @export
@@ -82,12 +80,11 @@ blockmax <- function(mat, block) {
 #'     containing the min value for each block.
 #'
 #' @name blockmin
-#' @param mat Matrix object
-#' @param block Integer vector of length 2, containing the size of the block
+#'
+#' @param mat numeric matrix
+#' @param block integer vector of length 2, containing the size of the block
 #' (rows, columns). If only one integer is passed, the block is square
-#' @usage
-#' # Call blockmin
-#' # blockmin(mat, block)
+#'
 #' @return
 #' A new reduced matrix with min value of each block
 #' @export
@@ -121,12 +118,11 @@ blockmin <- function(mat, block) {
 #'     containing all submatrices made by blocks.
 #'
 #' @name blocklist
-#' @param mat Matrix object
-#' @param block Integer vector of length 2, containing the size of the block
+#'
+#' @param mat numeric matrix
+#' @param block integer vector of length 2, containing the size of the block
 #' (rows, columns). If only one integer is passed, the block is square
-#' @usage
-#' # Call blocklist
-#' # blockmin(mat, block)
+#'
 #' @return
 #' A list of submatrices made by blocks
 #' @export
@@ -162,12 +158,11 @@ blocklist <- function(mat, block) {
 #'     containing all diagonal submatrices made by blocks.
 #'
 #' @name dblocklist
-#' @param mat Matrix object
+#'
+#' @param mat numeric matrix
 #' @param block Integer vector of length 2, containing the size of the block
 #' (rows, columns). If only one integer is passed, the block is square
-#' @usage
-#' # Call dblocklist
-#' # dblockmin(mat, block)
+#'
 #' @return
 #' A list of diangonal submatrices made by blocks
 #' @export
@@ -214,10 +209,9 @@ dblocklist <- function(mat, block) {
 #'     the average of all corresponding elements i of all vectors in the list.
 #'
 #' @name meanMatrix
-#' @param matricesList A list of numeric matrices with same dimensions
-#' @usage
-#' # Call meanMatrix
-#' # meanMatrix(matricesList)
+#'
+#' @param matricesList a list of numeric matrices with same dimensions
+#'
 #' @return
 #' A matrix in which element (i,j) is the average of all corresponding elements
 #' (i,j) of all matrices in the original list
@@ -251,11 +245,9 @@ meanMatrix <- function(matricesList) {
 #'     the sum of all corresponding elements i of all vectors in the list.
 #'
 #' @name sumMatrix
-#' @param matricesList A list of numeric matrices with same dimensions
 #'
-#' @usage
-#' # Call sumMatrix
-#' # sumMatrix(matricesList)
+#' @param matricesList a list of numeric matrices with same dimensions
+#'
 #' @return
 #' A matrix in which element (i,j) is the sum of all corresponding elements
 #' (i,j) of all matrices in the original list
@@ -288,11 +280,9 @@ sumMatrix <- function(matricesList) {
 #'     the product of all corresponding elements i of all vectors in the list.
 #'
 #' @name dotMatrix
-#' @param matricesList A list of numeric matrices with same dimensions
 #'
-#' @usage
-#' # Call dotMatrix
-#' # dotMatrix(matricesList)
+#' @param matricesList a list of numeric matrices with same dimensions
+#'
 #' @return
 #' A matrix in which element (i,j) is the product of all corresponding elements
 #' (i,j) of all matrices in the original list
@@ -324,7 +314,8 @@ dotMatrix <- function(matricesList) {
 #' original matrix element.
 #'
 #' @name pileMatrix
-#' @param mat Matrix object
+#'
+#' @param mat numeric matrix
 #' @param subset character indicating which array elements to take. The possible choices are:
 #' "full": the whole matrix (default),
 #' "u": upper triangular matrix without diagonal,
@@ -332,9 +323,7 @@ dotMatrix <- function(matricesList) {
 #' "l": lower triangular matrix without diagonal,
 #' "ld": lower triangular matrix with diagonal,
 #' "d": only the diagonal
-#' @usage
-#' # Call pileMatrix
-#' # pileMatrix(mat, "full")
+#'
 #' @return
 #' A dataframe with three columns: row index (row), col index (col) and matrix element value (value)
 #' @export

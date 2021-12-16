@@ -4,13 +4,12 @@
 \alias{blockmin}
 \title{Performs block min}
 \usage{
-# Call blockmin
-# blockmin(mat, block)
+blockmin(mat, block)
 }
 \arguments{
-\item{mat}{Matrix object}
+\item{mat}{numeric matrix}
 
-\item{block}{Integer vector of length 2, containing the size of the block
+\item{block}{integer vector of length 2, containing the size of the block
 (rows, columns). If only one integer is passed, the block is square}
 }
 \value{

@@ -4,7 +4,7 @@ using namespace Rcpp;
 
 // [[Rcpp::export(name = ".getCoords1d")]]
 NumericVector getCoords1d(
-    unsigned xcell, double xmin, double xmax, NumericVector cell) {
+    int xcell, double xmin, double xmax, NumericVector cell) {
 
   size_t len = cell.size();
 
