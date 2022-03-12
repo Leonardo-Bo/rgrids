@@ -164,6 +164,50 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// triang1
+NumericVector triang1(int ncell);
+RcppExport SEXP _rgrids_triang1(SEXP ncellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type ncell(ncellSEXP);
+    rcpp_result_gen = Rcpp::wrap(triang1(ncell));
+    return rcpp_result_gen;
+END_RCPP
+}
+// triang2
+NumericVector triang2(int ncell);
+RcppExport SEXP _rgrids_triang2(SEXP ncellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type ncell(ncellSEXP);
+    rcpp_result_gen = Rcpp::wrap(triang2(ncell));
+    return rcpp_result_gen;
+END_RCPP
+}
+// triang3
+NumericVector triang3(int ncell);
+RcppExport SEXP _rgrids_triang3(SEXP ncellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type ncell(ncellSEXP);
+    rcpp_result_gen = Rcpp::wrap(triang3(ncell));
+    return rcpp_result_gen;
+END_RCPP
+}
+// triang4
+NumericVector triang4(int ncell);
+RcppExport SEXP _rgrids_triang4(SEXP ncellSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type ncell(ncellSEXP);
+    rcpp_result_gen = Rcpp::wrap(triang4(ncell));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rowMax
 NumericMatrix rowMax(NumericMatrix mat);
 RcppExport SEXP _rgrids_rowMax(SEXP matSEXP) {
@@ -219,6 +263,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rgrids_blockmean", (DL_FUNC) &_rgrids_blockmean, 5},
     {"_rgrids_blockmax", (DL_FUNC) &_rgrids_blockmax, 5},
     {"_rgrids_blockmin", (DL_FUNC) &_rgrids_blockmin, 5},
+    {"_rgrids_triang1", (DL_FUNC) &_rgrids_triang1, 1},
+    {"_rgrids_triang2", (DL_FUNC) &_rgrids_triang2, 1},
+    {"_rgrids_triang3", (DL_FUNC) &_rgrids_triang3, 1},
+    {"_rgrids_triang4", (DL_FUNC) &_rgrids_triang4, 1},
     {"_rgrids_rowMax", (DL_FUNC) &_rgrids_rowMax, 1},
     {"_rgrids_rowMin", (DL_FUNC) &_rgrids_rowMin, 1},
     {"_rgrids_colMax", (DL_FUNC) &_rgrids_colMax, 1},

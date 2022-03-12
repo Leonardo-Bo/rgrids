@@ -37,6 +37,22 @@
     .Call('_rgrids_blockmin', PACKAGE = 'rgrids', matrix, width, block_width, height, block_height)
 }
 
+.triang1 <- function(ncell) {
+    .Call('_rgrids_triang1', PACKAGE = 'rgrids', ncell)
+}
+
+.triang2 <- function(ncell) {
+    .Call('_rgrids_triang2', PACKAGE = 'rgrids', ncell)
+}
+
+.triang3 <- function(ncell) {
+    .Call('_rgrids_triang3', PACKAGE = 'rgrids', ncell)
+}
+
+.triang4 <- function(ncell) {
+    .Call('_rgrids_triang4', PACKAGE = 'rgrids', ncell)
+}
+
 .rowMax <- function(mat) {
     .Call('_rgrids_rowMax', PACKAGE = 'rgrids', mat)
 }

@@ -1,7 +1,7 @@
 Package: rgrids
 Type: Package
 Title: Manage grids and lattices
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: person("Leonardo", "Bò", email = "boleo88@gmail.com", role = c("aut", "cre"))
 Description: A package to consistently analyze grids and lattices.
     You can perform density analysis, work on block matrices and first neighbors.
