@@ -1,7 +1,7 @@
-# rgrids <a href='#'><img src='man/figures/logo.png' align="right" height="115" /></a>
+# rgrids <a href='https://github.com/Leonardo-Bo/rgrids'><img src='man/figures/logo.png' align="right" height="145" /></a>
 
-[![Version](https://img.shields.io/badge/Version-0.5.0-orange)](https://github.com/Leonardo-Bo/rgrids)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Leonardo-Bo/rgrids/blob/master/LICENSE.md)
+[![Version](man/figures/version.svg)](https://github.com/Leonardo-Bo/rgrids)
+[![License: GPL v3](man/figures/license.svg)](https://github.com/Leonardo-Bo/rgrids/blob/master/LICENSE.md)
 
 #
 ### Overview
