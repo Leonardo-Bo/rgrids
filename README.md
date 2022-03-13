@@ -2,6 +2,7 @@
 
 [![Version](man/figures/version.svg)](https://github.com/Leonardo-Bo/rgrids)
 [![License: GPL v3](man/figures/license.svg)](https://github.com/Leonardo-Bo/rgrids/blob/master/LICENSE.md)
+[![R-CMD-check](https://github.com/Leonardo-Bo/rgrids/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Leonardo-Bo/rgrids/actions/workflows/R-CMD-check.yaml)
 
 #
 ### Overview
