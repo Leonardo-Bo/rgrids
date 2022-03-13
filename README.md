@@ -55,8 +55,11 @@ The purpose of `rgrids` is to collect a not too large number of functions that w
     - `rowMax()`: given a matrix, it returns the `max` of each row
     - `rowMin()`: given a matrix, it returns the `min` of each row
     
-- other functions:
+- the functions that connect matrices and dataframes are:
     - `pileMatrix()`: it transforms a matrix into a dataframe with three columns: row and column coordinates of each matrix element and value of each respective matrix element; it allows different selection options, for example the whole matrix or only the upper triangular matrix, ...
+    - `getTriang()`: given the number of elements of a square matrix represented as a three-column dataframe (obtained for example from `pileMatrix()`), it filters only the desired elements, i.e. the elements of the upper or lower triangular matrix with or without diagonal in the main or mirrored direction.
+    
+- other functions:
     - `tableToLatex()`: given a numeric matrix or a data.frame, it returns a basic LaTeX table write with table and tabular packages; rownames and colnames are highlighted with bold.
 
 #
