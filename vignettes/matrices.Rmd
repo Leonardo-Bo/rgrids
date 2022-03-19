@@ -1,0 +1,106 @@
+---
+title: "Submatrices and lists of matrices"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{matrices}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+```{r setup}
+library(rgrids)
+```
+
+This vignette shows an easy way to work with submatrices and matrix lists. 
+
+The following functions apply to both rectangular and square matrices. In data analysis, a square matrix can emerge, for example, from covariance calculations, or by calculating the distances between all the points belonging to a given set; 
+
+```
+(A, B, C)
+
+   A  B  C
+A  x  x  x
+B  x  x  x
+C  x  x  x
+```
+
+a rectangular matrix instead can still emerge between distance calculations, but between two sets with different number of points.
+
+```
+(A, B, C)
+(D, E)
+
+   A  B  C
+D  x  x  x
+E  x  x  x
+```
+
+## Basic operations: mean, max, min
+Given a matrix, it may be useful to consider its blocks and observe some essential characteristics of each block. To do this you can use the `blockmean()`, `blockmax()` and `blockmin()` functions that take a matrix and the block size as input and return the average, maximum and minimum values of each block respectively.
+
+```{r}
+(mat1 <- matrix(1:64, nrow = 8, byrow = TRUE))
+```
+
+It is important that the blocks fill the entire matrix, that is, that the total number of rows and columns is a multiple of the number of rows and columns in the block. In this case, for example, blocks of size `c(2,4)`, `c(4,2)` and so on are good. While it is possible to work with rectangular blocks, it is very often useful to work with square blocks. For example we define a 2x2 block and apply the functions:
+
+```{r}
+blockmean(mat1, 2)
+
+blockmax(mat1, 2)
+
+blockmin(mat1, 2)
+```
+
+If the block is square it is sufficient to insert only one dimension, while for a rectangular block a vector `c(nrow_block, ncol_block)` must be passed.
+
+### Lists of submatrices
+In some situations it may be necessary to perform more complex operations on the blocks.
+
+Suppose we want to multiply each block by a different integer. To do this it is convenient to have control over each block. We can collect all submatrices in one list using `blocklist()` function.
+
+```{r}
+(list_matrix <- blocklist(mat1, 4))
+```
+
+Like the previous functions, `blocklist()` takes the matrix and the size of the block as input.
+
+An element of the list can be accessed with a double square bracket: `list_matrix[[i]]`; however, often for operations on lists it is possible to avoid having to access each element individually thanks to the `lapply` function.
+
+We multiply each matrix in the list by a different number: the first by `4`, the second by `9`, the third by `16` and the fourth by `25`.
+
+```{r}
+lapply(1:4, function(i, l, v) l[[i]] * v[[i]], list_matrix, c(4, 9, 16, 25))
+```
+
+#### dblocklist
+The block diagonal of a matrix can be more importante than the off-diagonal blocks. You can collect the diagonal blocks in a list using the `dblocklist()` function analogous to `blocklist()`. The only trick: the blocks must fill the diagonal. This mathematically translates into the fact that the ratio between the number of rows in the matrix and the number of rows in the block must be equal to the ratio between the number of columns in the matrix and the number of columns in the block. Example: for a 16x8 matrix `dblocklist()` accepts 8x4, 4x2 blocks.
+
+```{r}
+dblocklist(mat1, 2)
+```
+
+## From list of matrices to single matrix
+Suppose we need to calculate the mean distance over time between all pairs of two sets of points. For convenience we use `list_matrix`: each matrix $k$ in the list is a set of distances at time $t_k$.
+
+The `meanMatrix()` function returns the mean of each element of matrix $(i, j)$
+
+```{r}
+meanMatrix(list_matrix)
+```
+
+Similarly, `sumMatrix()` and `dotMatrix()` functions return sum and product of each element $(i, j)$ of matrix of the list
+
+```{r}
+sumMatrix(list_matrix)
+
+dotMatrix(list_matrix)
+```

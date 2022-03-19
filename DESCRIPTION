@@ -16,3 +16,8 @@ LinkingTo:
     Rcpp
 URL: https://github.com/Leonardo-Bo/rgrids
 BugReports: https://github.com/Leonardo-Bo/rgrids/issues
+Suggests: 
+    knitr,
+    rmarkdown,
+    ggplot2
+VignetteBuilder: knitr

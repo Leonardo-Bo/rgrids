@@ -1,0 +1,115 @@
+---
+title: "dataframes <==> matrices"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{df-matrices}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+This vignette shows how to switch from matrices to dataframes and vice versa.
+
+```{r setup}
+library(rgrids)
+library(ggplot2)
+```
+
+There are many ways to achieve the same result in programming and thereafter there is nothing that cannot be done through operations on matrices. However, for data manipulation, the dataframe can be a more comfortable structure to work on.
+
+## pileMatrix()
+There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via ggplot2 can be tricky if you don't use auxiliary packages.
+
+One possibility is to use the reshape2 package's melt function, but if you want only a part of the matrix then additional operations such as `upper.tri()` or similar are required.
+
+The `pileMatrix()` function simplifies these operations; it works similarly to the `reshape2::melt()` function, however, while not performing as `melt`, it allows you to easily choose the parts of interest of the matrix.
+
+We define a square test matrix
+
+```{r}
+(mat1 <- matrix(1:64, nrow = 8, byrow = TRUE))
+```
+
+Using `pileMatrix()` we obtain a dataframe of three columns, where the first two indicate the row and column of the matrix, while the third indicates the value of the matrix element
+
+```{r}
+head(pileMatrix(mat1))
+```
+
+It is possible which part of the matrix to stack by choosing between:
+
+- `"full"`: the whole matrix (default),
+- `"u"`: upper triangular matrix without diagonal,
+- `"ud"`: upper trinagular matrix with diagonal,
+- `"l"`: lower triangular matrix without diagonal,
+- `"ld"`: lower triangular matrix with diagonal,
+- `"d"`: only the diagonal
+
+```{r}
+head(pileMatrix(mat1, subset = "u"))
+
+pileMatrix(mat1, subset = "d")
+```
+
+## getTriang()
+The purpose of `getTriang()` is to filter parts of a dataframe when inside a workflow.
+
+We consider a dataframe of points and calculate the distances by all pairs of points. If you define intermediate variables, you can proceed in any way, including a for loop. But let's see how to proceed with `getTriang()`
+
+```{r}
+(df1 <- data.frame(x = runif(10), y = runif(10), index = 1:10))
+
+head(merge(x = df1, y = df1, by = NULL))
+```
+
+The `merge()` function returns all possible pairs, but the distance of a point with itself does not matter because it is always zero and furthermore the distance between points $a - b$ is the same between $b - a$, so we want to discard the repetitions. 
+
+We can do this with `getTriang()` which given the number of cells of a square matrix (in fact the dataframe we are using can be seen as a square matrix) returns the indices of the desired matrix elements; in particular, you can choose the upper or lower part of the matrix, with or without diagonal, in the main direction or in the mirrored direction; moreover it is possible to choose the direction in which the elements of the matrix are reported (i.e. increasing the $x$ (`"h"`) or the $y$ (`"v"`) faster), for a total of 16 possibilities.
+
+For clarity we calculate all distances and then filter only those of the lower part without diagonal, but to perform fewer calculations it would be better to filter first.
+
+```{r, fig.width = 7, fig.height = 3.5}
+df_merge <- merge(x = df1, y = df1, by = NULL)
+
+# calculate distance
+df_merge$distance <- sqrt((df_merge$x.x - df_merge$x.y)^2 + (df_merge$y.x - df_merge$y.y)^2)
+
+# define lower triangular matrix index without diagonal
+lower_ndx <- getTriang(nrow(df_merge), diag = FALSE, part = "lower")
+
+# filter df_merge
+df_merge_filter <- df_merge[lower_ndx, ]
+
+# join dataframe to representation
+df_full <- data.frame(rbind(df_merge, df_merge_filter))
+df_full$group <- c(rep("full", nrow(df_merge)), rep("filter", nrow(df_merge_filter)))
+
+ggplot(df_full) + 
+  geom_tile(aes(x = index.x, y = index.y, fill = distance)) + 
+  facet_wrap(~group)
+```
+
+Due to how `R` counts matrix elements and how we set up the indices, we see that we have not selected the right part. What we need is the lower part, but in the mirrored direction
+
+```{r, fig.width = 7, fig.height = 3.5}
+# define mirrored lower triangular matrix index without diagonal
+lower_mir_ndx <- getTriang(nrow(df_merge), diag = FALSE, part = "lower", mirror = TRUE)
+
+# filter df_merge
+df_merge_filter <- df_merge[lower_mir_ndx, ]
+
+# join dataframe to representation
+df_full <- data.frame(rbind(df_merge, df_merge_filter))
+df_full$group <- c(rep("full", nrow(df_merge)), rep("filter", nrow(df_merge_filter)))
+
+ggplot(df_full) + 
+  geom_tile(aes(x = index.x, y = index.y, fill = distance)) + 
+  facet_wrap(~group)
+```

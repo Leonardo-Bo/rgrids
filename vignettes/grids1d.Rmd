@@ -1,0 +1,103 @@
+---
+title: "1D grids"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{grids}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+This vignette shows how to obtain a boxplot or histogram given a dataframe of points in a plane.
+
+```{r setup}
+library(rgrids)
+library(ggplot2)
+```
+
+## Boxplot
+
+A density analysis in one dimension can be performed on points lying on a line suitably divided into segments, that is, different $x$ and $y = 0$, or on a set of points in the plane which is divided into strips.
+
+If we consider a plane divided into strips, the grouping of points can be shown in a boxplot.  
+Let's see how to proceed.
+
+### Define dataframe of points
+First we define a dataframe of random points
+
+```{r, fig.width = 6, fig.height = 4}
+set.seed(1)
+    
+df_points <- data.frame(x = c(rnorm(n = 5000, mean = -4), 
+                              rnorm(n = 5000, mean = 4)), 
+                        y = c(rnorm(n = 5000, mean = 1), 
+                              rnorm(n = 5000, mean = -1))
+) 
+    
+ggplot(df_points) + 
+  geom_point(aes(x, y), color = "steelblue4", size = 0.1)
+```
+### Make 1D grid
+Then a one-dimensional grid is built. A one-dimensional grid is defined by the lower bound, the upper bound, and the number of vertical stripes.
+
+```{r}
+# check the extreme values of the points along x
+min(df_points$x)
+max(df_points$x)
+ 
+# define boundaries of grid
+(xmin <- floor(min(df_points$x)))
+(xmax <- ceiling(max(df_points$x)))
+   
+# define the grid
+grid1d <- makeGrid1d(xmin = xmin, xmax = xmax, xcell = 16)
+grid1d
+```
+
+The criterion for defining the grid boundaries and the number of strips varies from time to time based on the data and the type of analysis.
+
+### Get the boxplot
+Finally we get the boxplot using `getBoxplot()` function. The `getBoxplot()` function takes as input an object of class `Grid1d` and a dataframe of points. If the input dataframe has more than two columns, the first two will be automatically selected.
+   
+```{r}
+df_boxplot <- getBoxplot(grid1d, df_points)
+    
+head(df_boxplot)
+```
+
+`getBoxplot()` assigns the same `x` value to all points within the same strip. The `xbp` column is a `factor`.
+
+```{r, fig.width = 6, fig.height = 4}
+ggplot(df_boxplot)+
+  geom_boxplot(aes(x = xbp, y = y), fill = "steelblue3", color = "grey40") + 
+  labs(x = "x") + 
+  scale_x_discrete(breaks = levels(df_boxplot$xbp), drop = FALSE)
+```
+
+<!-- It is essential to add the `scale_x_discrete` line as in the example if you want to represent boxes without points (therefore empty spaces). By removing the line all the boxes are attached and the `x` axis shows jumps. -->
+
+## Histogram
+There are functions that can generate a histogram and provide all the information about it. However, a histogram can also be obtained using the `getCell()` and `getCount()` function of `rgrids`.
+
+`getCell()` function assigns each point of the plane to its respective strip, counting strips from left to right, while `getCounts()` function counts how many points fall within each strip and returns a dataframe with two columns: the center of the bin (i.e. the center of the strip) and the count.
+
+```{r}
+df_points$grid_index <- getCell(grid1d, df_points)
+head(df_points)
+
+df_hist <- getCounts(grid1d, df_points$grid_index)
+head(df_hist)
+```
+
+```{r, fig.width = 6, fig.height = 4}
+ggplot(df_hist) + 
+  geom_col(aes(x, counts/sum(counts)), fill = "steelblue4") + 
+  labs(y = "frequency")
+```
