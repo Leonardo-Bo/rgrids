@@ -14,7 +14,8 @@ Imports:
     Rcpp
 LinkingTo: 
     Rcpp
-URL: https://github.com/Leonardo-Bo/rgrids
+URL: https://github.com/Leonardo-Bo/rgrids,
+    https://leonardo-bo.github.io/rgrids/
 BugReports: https://github.com/Leonardo-Bo/rgrids/issues
 Suggests: 
     knitr,
