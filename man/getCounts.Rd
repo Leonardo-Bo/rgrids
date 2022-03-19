@@ -41,4 +41,6 @@ grid_index <- getCell(the_grid, df_points)
 # 4. Count how many points there are in each element of the grid
 df_grid <- getCounts(the_grid, grid_index)
 
+head(df_grid)
+
 }

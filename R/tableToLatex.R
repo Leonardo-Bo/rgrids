@@ -15,16 +15,8 @@
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
-#' # \begin{table}[htbp]
-#' # \centering
-#' # \begin{tabular}{ccc}
-#' # 1.000 & 4.000 & 7.000 \\
-#' # 2.000 & 5.000 & 8.000 \\
-#' # 3.000 & 6.000 & 9.000 \\
-#' # \end{tabular}
-#' # \caption{}
-#' # \label{}
-#' # \end{table}
+#'
+#' tableToLatex(mat)
 #'
 #' @export
 tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE) {

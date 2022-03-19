@@ -31,25 +31,8 @@ from the bottom left and proceeds by incrementing x ("h") or y ("v") faster.
 }
 \examples{
 df_grid <- expand.grid(x = 1:4, y = 1:4)
-#    x y
-# 1  1 1
-# 2  2 1
-# 3  3 1
-# 4  4 1
-# 5  1 2
-# 6  2 2
-# 7  3 2
-# 8  4 2
-# 9  1 3
-# 10 2 3
-# 11 3 3
-# 12 4 3
-# 13 1 4
-# 14 2 4
-# 15 3 4
-# 16 4 4
+df_grid
 
 getTriang(nrow(df_grid), part = "upper", mirror = TRUE, diag = TRUE, by = "h")
-#  1  5  6  9 10 11 13 14 15 16
 
 }

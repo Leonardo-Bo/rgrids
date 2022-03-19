@@ -21,9 +21,5 @@ Given a matrix, it returns a dataframe with two column:
 mat <- matrix(1:9, nrow = 3)
 
 rowMin(mat)
-#   value index
-# 1     1     1
-# 2     2     1
-# 3     3     1
 
 }

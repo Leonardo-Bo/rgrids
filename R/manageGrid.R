@@ -39,6 +39,8 @@ NULL
 #' grid_index <- getCell(the_grid, df_points)
 #' df_points$grid_index <- grid_index
 #'
+#' head(df_points)
+#'
 #' @export
 getCell <- function(grid, points) {
   if (class(grid)[1] != "Grid1d" & class(grid)[1] != "Grid2d" & class(grid)[1] != "Grid3d") {
@@ -239,6 +241,8 @@ getCell <- function(grid, points) {
 #' # 4. Count how many points there are in each element of the grid
 #' df_grid <- getCounts(the_grid, grid_index)
 #'
+#' head(df_grid)
+#'
 #' @export
 getCounts <- function(grid, indexCell) {
   if (class(grid)[1] != "Grid1d" & class(grid)[1] != "Grid2d" & class(grid)[1] != "Grid3d") {
@@ -312,6 +316,8 @@ getCounts <- function(grid, indexCell) {
 #'
 #' # 3. Obtain boxplot dataframe
 #' df_boxplot <- getBoxplot(stripes, df_points)
+#'
+#' head(df_boxplot)
 #'
 #' @export
 getBoxplot <- function(grid, points) {

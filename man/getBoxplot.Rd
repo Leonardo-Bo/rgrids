@@ -35,4 +35,6 @@ stripes <- makeGrid1d(
 # 3. Obtain boxplot dataframe
 df_boxplot <- getBoxplot(stripes, df_points)
 
+head(df_boxplot)
+
 }

@@ -27,8 +27,5 @@ mat3 <- matrix(9:12, nrow = 2)
 list_matrix <- list(mat1, mat2, mat3)
 
 meanMatrix(list_matrix)
-#      [,1] [,2]
-# [1,]    5    7
-# [2,]    6    8
 
 }

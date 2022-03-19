@@ -15,10 +15,6 @@
 #' mat <- matrix(1:9, nrow = 3)
 #'
 #' rowMax(mat)
-#' #   value index
-#' # 1     7     3
-#' # 2     8     3
-#' # 3     9     3
 #'
 #' @export
 rowMax <- function(mat) {
@@ -51,10 +47,6 @@ rowMax <- function(mat) {
 #' mat <- matrix(1:9, nrow = 3)
 #'
 #' rowMin(mat)
-#' #   value index
-#' # 1     1     1
-#' # 2     2     1
-#' # 3     3     1
 #'
 #' @export
 rowMin <- function(mat) {
@@ -87,10 +79,6 @@ rowMin <- function(mat) {
 #' mat <- matrix(1:9, nrow = 3)
 #'
 #' colMax(mat)
-#' #   value index
-#' # 1     3     3
-#' # 2     6     3
-#' # 3     9     3
 #'
 #' @export
 colMax <- function(mat) {
@@ -123,10 +111,6 @@ colMax <- function(mat) {
 #' mat <- matrix(1:9, nrow = 3)
 #'
 #' rowMax(mat)
-#' #   value index
-#' # 1     1     1
-#' # 2     4     1
-#' # 3     7     1
 #'
 #' @export
 colMin <- function(mat) {

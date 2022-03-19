@@ -27,8 +27,5 @@ mat3 <- matrix(9:12, nrow = 2)
 list_matrix <- list(mat1, mat2, mat3)
 
 sumMatrix(list_matrix)
-#      [,1] [,2]
-# [1,]   15   21
-# [2,]   18   24
 
 }

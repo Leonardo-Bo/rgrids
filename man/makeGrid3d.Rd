@@ -37,28 +37,14 @@ Given the extremes of the range and the number of cells along x
 }}
 
 \examples{
-grid3d <- makeGrid3d(xmin = -50, xmax = 50,
-                     ymin = -50, ymax = 50,
-                     zmin = -50, zmax = 50,
-                     xcell = 4, ycell = 5, zcell = 6,
-                     by = "v")
-
+grid3d <- makeGrid3d(
+            xmin = -50, xmax = 50, xcell = 4,
+            ymin = -50, ymax = 50, ycell = 5,
+            zmin = -50, zmax = 50, zcell = 6,
+            by = "v"
+          )
 grid3d
-# class      : Grid3d
-# dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120
-# range      : xmin = -50, xmax = 50
-#              ymin = -50, ymax = 50
-#              zmin = -50, zmax = 50
-# by         : v, count starts from xmin, ymin, zmin;
-#              z increase faster, x slower"
-
 
 makeGrid3d()
-# class      : Grid3d
-# dimensions : xcell = 5, ycell = 5, zcell = 5, ncell = 125
-# range      : xmin = -5, xmax = 5
-#              ymin = -5, ymax = 5
-#              zmin = -5, zmax = 5
-# by         : h, count starts from xmin, ymin, zmin;
-#              x increase faster, z slower"
+
 }

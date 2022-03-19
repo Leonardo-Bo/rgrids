@@ -21,9 +21,5 @@ Given a matrix, it returns a dataframe with two column:
 mat <- matrix(1:9, nrow = 3)
 
 colMax(mat)
-#   value index
-# 1     3     3
-# 2     6     3
-# 3     9     3
 
 }

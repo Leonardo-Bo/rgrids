@@ -32,26 +32,13 @@ Given the extremes of the range and the number of cells along x
 }}
 
 \examples{
-grid2d <- makeGrid2d(xmin = -50, xmax = 50,
-                     ymin = -50, ymax = 50,
-                     xcell = 100, ycell = 100,
-                     by = "v")
-
+grid2d <- makeGrid2d(
+            xmin = -50, xmax = 50, xcell = 100,
+            ymin = -50, ymax = 50, ycell = 100,
+            by = "v"
+          )
 grid2d
-# class      : Grid2d
-# dimensions : xcell = 100, ycell = 100, ncell = 10000
-# range      : xmin = -50, xmax = 50
-#              ymin = -50, ymax = 50
-# by         : v, count starts from xmin, ymin (bottom-left)
-#              and y increase faster
-
 
 makeGrid2d()
-# class      : Grid2d
-# dimensions : xcell = 10, ycell = 10, ncell = 100
-# range      : xmin = -5, xmax = 5
-#              ymin = -5, ymax = 5
-# by         : h, count starts from xmin, ymin (bottom-left)
-#              and x increase faster
 
 }

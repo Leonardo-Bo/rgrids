@@ -24,16 +24,8 @@ Given the extremes of the range and the number of cells, it
 
 \examples{
 grid1d <- makeGrid1d(xmin = -50, xmax = 50, xcell = 100)
-
 grid1d
-# class      : Grid1d
-# dimensions : xcell = 100
-# range      : xmin = -50, xmax = 50
-
 
 makeGrid1d()
-# class      : Grid1d
-# dimension  : xcell = 10
-# range      : xmin = -5, xmax = 5
 
 }

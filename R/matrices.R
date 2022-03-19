@@ -16,11 +16,6 @@
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' blockmean(mat, 2) # or blockmean(mat, c(2, 2))
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]  5.5  7.5  9.5 11.5
-#' # [2,] 21.5 23.5 25.5 27.5
-#' # [3,] 37.5 39.5 41.5 43.5
-#' # [4,] 53.5 55.5 57.5 59.5
 #'
 #' @export
 blockmean <- function(mat, block) {
@@ -65,11 +60,6 @@ blockmean <- function(mat, block) {
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' blockmax(mat, 2) # or blockmax(mat, c(2, 2))
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]   10   12   14   16
-#' # [2,]   26   28   30   32
-#' # [3,]   42   44   46   48
-#' # [4,]   58   60   62   64
 #'
 #' @export
 blockmax <- function(mat, block) {
@@ -114,11 +104,6 @@ blockmax <- function(mat, block) {
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' blockmin(mat, 2) # or blockmin(mat, c(2, 2))
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]    1    3    5    7
-#' # [2,]   17   19   21   23
-#' # [3,]   33   35   37   39
-#' # [4,]   49   51   53   55
 #'
 #' @export
 blockmin <- function(mat, block) {
@@ -163,33 +148,6 @@ blockmin <- function(mat, block) {
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' blocklist(mat, 4)
-#' # $`1`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]    1    2    3    4
-#' # [2,]    9   10   11   12
-#' # [3,]   17   18   19   20
-#' # [4,]   25   26   27   28
-#' #
-#' # $`2`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]    5    6    7    8
-#' # [2,]   13   14   15   16
-#' # [3,]   21   22   23   24
-#' # [4,]   29   30   31   32
-#' #
-#' # $`3`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]   33   34   35   36
-#' # [2,]   41   42   43   44
-#' # [3,]   49   50   51   52
-#' # [4,]   57   58   59   60
-#' #
-#' # $`4`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]   37   38   39   40
-#' # [2,]   45   46   47   48
-#' # [3,]   53   54   55   56
-#' # [4,]   61   62   63   64
 #'
 #' @export
 blocklist <- function(mat, block) {
@@ -236,19 +194,6 @@ blocklist <- function(mat, block) {
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 #'
 #' dblocklist(mat, 4)
-#' # $`1`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]    1    2    3    4
-#' # [2,]    9   10   11   12
-#' # [3,]   17   18   19   20
-#' # [4,]   25   26   27   28
-#' #
-#' # $`2`
-#' #      [,1] [,2] [,3] [,4]
-#' # [1,]   37   38   39   40
-#' # [2,]   45   46   47   48
-#' # [3,]   53   54   55   56
-#' # [4,]   61   62   63   64
 #'
 #' @export
 dblocklist <- function(mat, block) {
@@ -308,9 +253,6 @@ dblocklist <- function(mat, block) {
 #' list_matrix <- list(mat1, mat2, mat3)
 #'
 #' meanMatrix(list_matrix)
-#' #      [,1] [,2]
-#' # [1,]    5    7
-#' # [2,]    6    8
 #'
 #' @export
 meanMatrix <- function(matricesList) {
@@ -356,9 +298,6 @@ meanMatrix <- function(matricesList) {
 #' list_matrix <- list(mat1, mat2, mat3)
 #'
 #' sumMatrix(list_matrix)
-#' #      [,1] [,2]
-#' # [1,]   15   21
-#' # [2,]   18   24
 #'
 #' @export
 sumMatrix <- function(matricesList) {
@@ -403,9 +342,6 @@ sumMatrix <- function(matricesList) {
 #' list_matrix <- list(mat1, mat2, mat3)
 #'
 #' dotMatrix(list_matrix)
-#' #      [,1] [,2]
-#' # [1,]   45  231
-#' # [2,]  120  384
 #'
 #' @export
 dotMatrix <- function(matricesList) {

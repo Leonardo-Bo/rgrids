@@ -23,10 +23,5 @@ Given a matrix and the size of a block, returns a new matrix
 mat <- matrix(1:64, nrow = 8, byrow = TRUE)
 
 blockmin(mat, 2) # or blockmin(mat, c(2, 2))
-#      [,1] [,2] [,3] [,4]
-# [1,]    1    3    5    7
-# [2,]   17   19   21   23
-# [3,]   33   35   37   39
-# [4,]   49   51   53   55
 
 }

@@ -42,4 +42,6 @@ the_grid <- makeGrid2d(
 grid_index <- getCell(the_grid, df_points)
 df_points$grid_index <- grid_index
 
+head(df_points)
+
 }
