@@ -19,7 +19,8 @@ Given a matrix, it returns a dataframe with two column:
 }
 \examples{
 mat <- matrix(1:9, nrow = 3)
+mat
 
-rowMax(mat)
+colMin(mat)
 
 }

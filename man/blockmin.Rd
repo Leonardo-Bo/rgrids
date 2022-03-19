@@ -21,6 +21,7 @@ Given a matrix and the size of a block, returns a new matrix
 }
 \examples{
 mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+mat
 
 blockmin(mat, 2) # or blockmin(mat, c(2, 2))
 

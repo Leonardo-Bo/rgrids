@@ -13,6 +13,7 @@
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
+#' mat
 #'
 #' rowMax(mat)
 #'
@@ -45,6 +46,7 @@ rowMax <- function(mat) {
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
+#' mat
 #'
 #' rowMin(mat)
 #'
@@ -77,6 +79,7 @@ rowMin <- function(mat) {
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
+#' mat
 #'
 #' colMax(mat)
 #'
@@ -109,8 +112,9 @@ colMax <- function(mat) {
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
+#' mat
 #'
-#' rowMax(mat)
+#' colMin(mat)
 #'
 #' @export
 colMin <- function(mat) {

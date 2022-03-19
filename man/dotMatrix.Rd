@@ -25,6 +25,7 @@ mat1 <- matrix(1:4, nrow = 2)
 mat2 <- matrix(5:8, nrow = 2)
 mat3 <- matrix(9:12, nrow = 2)
 list_matrix <- list(mat1, mat2, mat3)
+list_matrix
 
 dotMatrix(list_matrix)
 

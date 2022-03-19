@@ -14,6 +14,7 @@
 #'
 #' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+#' mat
 #'
 #' blockmean(mat, 2) # or blockmean(mat, c(2, 2))
 #'
@@ -58,6 +59,7 @@ blockmean <- function(mat, block) {
 #'
 #' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+#' mat
 #'
 #' blockmax(mat, 2) # or blockmax(mat, c(2, 2))
 #'
@@ -102,6 +104,7 @@ blockmax <- function(mat, block) {
 #'
 #' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+#' mat
 #'
 #' blockmin(mat, 2) # or blockmin(mat, c(2, 2))
 #'
@@ -146,6 +149,7 @@ blockmin <- function(mat, block) {
 #'
 #' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+#' mat
 #'
 #' blocklist(mat, 4)
 #'
@@ -192,6 +196,7 @@ blocklist <- function(mat, block) {
 #'
 #' @examples
 #' mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+#' mat
 #'
 #' dblocklist(mat, 4)
 #'
@@ -251,6 +256,7 @@ dblocklist <- function(mat, block) {
 #' mat2 <- matrix(5:8, nrow = 2)
 #' mat3 <- matrix(9:12, nrow = 2)
 #' list_matrix <- list(mat1, mat2, mat3)
+#' list_matrix
 #'
 #' meanMatrix(list_matrix)
 #'
@@ -296,6 +302,7 @@ meanMatrix <- function(matricesList) {
 #' mat2 <- matrix(5:8, nrow = 2)
 #' mat3 <- matrix(9:12, nrow = 2)
 #' list_matrix <- list(mat1, mat2, mat3)
+#' list_matrix
 #'
 #' sumMatrix(list_matrix)
 #'
@@ -340,6 +347,7 @@ sumMatrix <- function(matricesList) {
 #' mat2 <- matrix(5:8, nrow = 2)
 #' mat3 <- matrix(9:12, nrow = 2)
 #' list_matrix <- list(mat1, mat2, mat3)
+#' list_matrix
 #'
 #' dotMatrix(list_matrix)
 #'

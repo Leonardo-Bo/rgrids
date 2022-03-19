@@ -23,6 +23,7 @@
 #'
 #' @examples
 #' mat <- matrix(1:9, nrow = 3)
+#' mat
 #'
 #' pileMatrix(mat)
 #'

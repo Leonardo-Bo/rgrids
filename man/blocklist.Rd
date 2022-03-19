@@ -21,6 +21,7 @@ Given a matrix and the size of a block, returns a list
 }
 \examples{
 mat <- matrix(1:64, nrow = 8, byrow = TRUE)
+mat
 
 blocklist(mat, 4)
 
