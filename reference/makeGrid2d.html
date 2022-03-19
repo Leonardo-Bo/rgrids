@@ -105,11 +105,11 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">grid2d</span> <span class="op">&lt;-</span> <span class="fu">makeGrid2d</span><span class="op">(</span>xmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, xmax <span class="op">=</span> <span class="fl">50</span>,</span>
-<span class="r-in">                     ymin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, ymax <span class="op">=</span> <span class="fl">50</span>,</span>
-<span class="r-in">                     xcell <span class="op">=</span> <span class="fl">100</span>, ycell <span class="op">=</span> <span class="fl">100</span>,</span>
-<span class="r-in">                     by <span class="op">=</span> <span class="st">"v"</span><span class="op">)</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">grid2d</span> <span class="op">&lt;-</span> <span class="fu">makeGrid2d</span><span class="op">(</span></span>
+<span class="r-in">            xmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, xmax <span class="op">=</span> <span class="fl">50</span>, xcell <span class="op">=</span> <span class="fl">100</span>,</span>
+<span class="r-in">            ymin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, ymax <span class="op">=</span> <span class="fl">50</span>, ycell <span class="op">=</span> <span class="fl">100</span>,</span>
+<span class="r-in">            by <span class="op">=</span> <span class="st">"v"</span></span>
+<span class="r-in">          <span class="op">)</span></span>
 <span class="r-in"><span class="va">grid2d</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class      : Grid2d</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dimensions : xcell = 100, ycell = 100, ncell = 10000</span>
@@ -117,13 +117,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>              ymin = -50, ymax = 50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> by         : v, count starts from xmin, ymin (bottom-left) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              and y increase faster</span>
-<span class="r-in"><span class="co"># class      : Grid2d</span></span>
-<span class="r-in"><span class="co"># dimensions : xcell = 100, ycell = 100, ncell = 10000</span></span>
-<span class="r-in"><span class="co"># range      : xmin = -50, xmax = 50</span></span>
-<span class="r-in"><span class="co">#              ymin = -50, ymax = 50</span></span>
-<span class="r-in"><span class="co"># by         : v, count starts from xmin, ymin (bottom-left)</span></span>
-<span class="r-in"><span class="co">#              and y increase faster</span></span>
-<span class="r-in"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">makeGrid2d</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class      : Grid2d</span>
@@ -132,12 +125,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>              ymin = -5, ymax = 5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> by         : h, count starts from xmin, ymin (bottom-left) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              and x increase faster</span>
-<span class="r-in"><span class="co"># class      : Grid2d</span></span>
-<span class="r-in"><span class="co"># dimensions : xcell = 10, ycell = 10, ncell = 100</span></span>
-<span class="r-in"><span class="co"># range      : xmin = -5, xmax = 5</span></span>
-<span class="r-in"><span class="co">#              ymin = -5, ymax = 5</span></span>
-<span class="r-in"><span class="co"># by         : h, count starts from xmin, ymin (bottom-left)</span></span>
-<span class="r-in"><span class="co">#              and x increase faster</span></span>
 <span class="r-in"></span>
 </code></pre></div>
     </div>

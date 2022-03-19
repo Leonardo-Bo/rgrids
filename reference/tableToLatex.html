@@ -85,16 +85,18 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># \begin{table}[htbp]</span></span>
-<span class="r-in"><span class="co"># \centering</span></span>
-<span class="r-in"><span class="co"># \begin{tabular}{ccc}</span></span>
-<span class="r-in"><span class="co"># 1.000 &amp; 4.000 &amp; 7.000 \</span></span>
-<span class="r-in"><span class="co"># 2.000 &amp; 5.000 &amp; 8.000 \</span></span>
-<span class="r-in"><span class="co"># 3.000 &amp; 6.000 &amp; 9.000 \</span></span>
-<span class="r-in"><span class="co"># \end{tabular}</span></span>
-<span class="r-in"><span class="co"># \caption{}</span></span>
-<span class="r-in"><span class="co"># \label{}</span></span>
-<span class="r-in"><span class="co"># \end{table}</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="fu">tableToLatex</span><span class="op">(</span><span class="va">mat</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> \begin{table}[htbp] </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> \centering </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  \begin{tabular}{ccc} </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1.000 &amp; 4.000 &amp; 7.000 \\ </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2.000 &amp; 5.000 &amp; 8.000 \\ </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3.000 &amp; 6.000 &amp; 9.000 \\ </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  \end{tabular} </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> \caption{} </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> \label{} </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> \end{table}</span>
 <span class="r-in"></span>
 </code></pre></div>
     </div>

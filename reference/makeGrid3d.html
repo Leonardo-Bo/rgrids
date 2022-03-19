@@ -114,12 +114,12 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">grid3d</span> <span class="op">&lt;-</span> <span class="fu">makeGrid3d</span><span class="op">(</span>xmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, xmax <span class="op">=</span> <span class="fl">50</span>,</span>
-<span class="r-in">                     ymin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, ymax <span class="op">=</span> <span class="fl">50</span>,</span>
-<span class="r-in">                     zmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, zmax <span class="op">=</span> <span class="fl">50</span>,</span>
-<span class="r-in">                     xcell <span class="op">=</span> <span class="fl">4</span>, ycell <span class="op">=</span> <span class="fl">5</span>, zcell <span class="op">=</span> <span class="fl">6</span>,</span>
-<span class="r-in">                     by <span class="op">=</span> <span class="st">"v"</span><span class="op">)</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">grid3d</span> <span class="op">&lt;-</span> <span class="fu">makeGrid3d</span><span class="op">(</span></span>
+<span class="r-in">            xmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, xmax <span class="op">=</span> <span class="fl">50</span>, xcell <span class="op">=</span> <span class="fl">4</span>,</span>
+<span class="r-in">            ymin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, ymax <span class="op">=</span> <span class="fl">50</span>, ycell <span class="op">=</span> <span class="fl">5</span>,</span>
+<span class="r-in">            zmin <span class="op">=</span> <span class="op">-</span><span class="fl">50</span>, zmax <span class="op">=</span> <span class="fl">50</span>, zcell <span class="op">=</span> <span class="fl">6</span>,</span>
+<span class="r-in">            by <span class="op">=</span> <span class="st">"v"</span></span>
+<span class="r-in">          <span class="op">)</span></span>
 <span class="r-in"><span class="va">grid3d</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class      : Grid3d</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120</span>
@@ -128,14 +128,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>              zmin = -50, zmax = 50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> by         : v, count starts from xmin, ymin, zmin;  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              z increase faster, x slower</span>
-<span class="r-in"><span class="co"># class      : Grid3d</span></span>
-<span class="r-in"><span class="co"># dimensions : xcell = 4, ycell = 5, zcell = 6, ncell = 120</span></span>
-<span class="r-in"><span class="co"># range      : xmin = -50, xmax = 50</span></span>
-<span class="r-in"><span class="co">#              ymin = -50, ymax = 50</span></span>
-<span class="r-in"><span class="co">#              zmin = -50, zmax = 50</span></span>
-<span class="r-in"><span class="co"># by         : v, count starts from xmin, ymin, zmin;</span></span>
-<span class="r-in"><span class="co">#              z increase faster, x slower"</span></span>
-<span class="r-in"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">makeGrid3d</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class      : Grid3d</span>
@@ -145,13 +137,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>              zmin = -5, zmax = 5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> by         : h, count starts from xmin, ymin, zmin;  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              x increase faster, z slower</span>
-<span class="r-in"><span class="co"># class      : Grid3d</span></span>
-<span class="r-in"><span class="co"># dimensions : xcell = 5, ycell = 5, zcell = 5, ncell = 125</span></span>
-<span class="r-in"><span class="co"># range      : xmin = -5, xmax = 5</span></span>
-<span class="r-in"><span class="co">#              ymin = -5, ymax = 5</span></span>
-<span class="r-in"><span class="co">#              zmin = -5, zmax = 5</span></span>
-<span class="r-in"><span class="co"># by         : h, count starts from xmin, ymin, zmin;</span></span>
-<span class="r-in"><span class="co">#              x increase faster, z slower"</span></span>
+<span class="r-in"></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
