@@ -162,26 +162,26 @@
 <p>We consider a dataframe of points and calculate the distances by all pairs of points. If you define intermediate variables, you can proceed in any way, including a for loop. But let’s see how to proceed with <code><a href="../reference/getTriang.html">getTriang()</a></code></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;              x          y index</span>
-<span class="co">#&gt; 1  0.062100631 0.11534681     1</span>
-<span class="co">#&gt; 2  0.008555931 0.34316892     2</span>
-<span class="co">#&gt; 3  0.928451082 0.17087932     3</span>
-<span class="co">#&gt; 4  0.220350196 0.82638304     4</span>
-<span class="co">#&gt; 5  0.684254711 0.36765803     5</span>
-<span class="co">#&gt; 6  0.380545130 0.04786869     6</span>
-<span class="co">#&gt; 7  0.976392858 0.42675091     7</span>
-<span class="co">#&gt; 8  0.053744490 0.36233537     8</span>
-<span class="co">#&gt; 9  0.269239564 0.97812035     9</span>
-<span class="co">#&gt; 10 0.454573007 0.83942325    10</span>
+<span class="co">#&gt;             x         y index</span>
+<span class="co">#&gt; 1  0.65385101 0.2476276     1</span>
+<span class="co">#&gt; 2  0.17035030 0.1937868     2</span>
+<span class="co">#&gt; 3  0.26386438 0.5664283     3</span>
+<span class="co">#&gt; 4  0.01527999 0.1368409     4</span>
+<span class="co">#&gt; 5  0.83486599 0.6532120     5</span>
+<span class="co">#&gt; 6  0.53209731 0.3921725     6</span>
+<span class="co">#&gt; 7  0.16853578 0.7407021     7</span>
+<span class="co">#&gt; 8  0.10354678 0.9974361     8</span>
+<span class="co">#&gt; 9  0.01969208 0.0988410     9</span>
+<span class="co">#&gt; 10 0.06554905 0.7061200    10</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;           x.x        y.x index.x        x.y       y.y index.y</span>
-<span class="co">#&gt; 1 0.062100631 0.11534681       1 0.06210063 0.1153468       1</span>
-<span class="co">#&gt; 2 0.008555931 0.34316892       2 0.06210063 0.1153468       1</span>
-<span class="co">#&gt; 3 0.928451082 0.17087932       3 0.06210063 0.1153468       1</span>
-<span class="co">#&gt; 4 0.220350196 0.82638304       4 0.06210063 0.1153468       1</span>
-<span class="co">#&gt; 5 0.684254711 0.36765803       5 0.06210063 0.1153468       1</span>
-<span class="co">#&gt; 6 0.380545130 0.04786869       6 0.06210063 0.1153468       1</span></code></pre></div>
+<span class="co">#&gt;          x.x       y.x index.x      x.y       y.y index.y</span>
+<span class="co">#&gt; 1 0.65385101 0.2476276       1 0.653851 0.2476276       1</span>
+<span class="co">#&gt; 2 0.17035030 0.1937868       2 0.653851 0.2476276       1</span>
+<span class="co">#&gt; 3 0.26386438 0.5664283       3 0.653851 0.2476276       1</span>
+<span class="co">#&gt; 4 0.01527999 0.1368409       4 0.653851 0.2476276       1</span>
+<span class="co">#&gt; 5 0.83486599 0.6532120       5 0.653851 0.2476276       1</span>
+<span class="co">#&gt; 6 0.53209731 0.3921725       6 0.653851 0.2476276       1</span></code></pre></div>
 <p>The <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> function returns all possible pairs, but the distance of a point with itself does not matter because it is always zero and furthermore the distance between points <span class="math inline">\(a - b\)</span> is the same between <span class="math inline">\(b - a\)</span>, so we want to discard the repetitions.</p>
 <p>We can do this with <code><a href="../reference/getTriang.html">getTriang()</a></code> which given the number of cells of a square matrix (in fact the dataframe we are using can be seen as a square matrix) returns the indices of the desired matrix elements; in particular, you can choose the upper or lower part of the matrix, with or without diagonal, in the main direction or in the mirrored direction; moreover it is possible to choose the direction in which the elements of the matrix are reported (i.e. increasing the <span class="math inline">\(x\)</span> (<code>"h"</code>) or the <span class="math inline">\(y\)</span> (<code>"v"</code>) faster), for a total of 16 possibilities.</p>
 <p>For clarity we calculate all distances and then filter only those of the lower part without diagonal, but to perform fewer calculations it would be better to filter first.</p>

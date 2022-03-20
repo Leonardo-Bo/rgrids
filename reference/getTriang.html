@@ -93,24 +93,31 @@ Default TRUE</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">df_grid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, y <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">df_grid</span><span class="op">$</span><span class="va">index</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">16</span></span>
 <span class="r-in"><span class="va">df_grid</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    x y</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  1 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  3 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  4 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  1 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 3 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 4 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 1 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 3 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 4 4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    x y index</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1 1     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2 1     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  3 1     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  4 1     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  1 2     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2 2     6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  3 2     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  4 2     8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  1 3     9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2 3    10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 3 3    11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 4 3    12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 1 4    13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2 4    14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 3 4    15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 4 4    16</span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># corresponding grid</span></span>
+<span class="r-in"><span class="co"># 13 14 15 16</span></span>
+<span class="r-in"><span class="co">#  9 10 11 12</span></span>
+<span class="r-in"><span class="co">#  5  6  7  8</span></span>
+<span class="r-in"><span class="co">#  1  2  3  4</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">getTriang</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_grid</span><span class="op">)</span>, part <span class="op">=</span> <span class="st">"upper"</span>, mirror <span class="op">=</span> <span class="cn">TRUE</span>, diag <span class="op">=</span> <span class="cn">TRUE</span>, by <span class="op">=</span> <span class="st">"h"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1  5  6  9 10 11 13 14 15 16</span>
