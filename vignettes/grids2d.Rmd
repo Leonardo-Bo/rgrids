@@ -26,7 +26,7 @@ library(ggplot2)
 
 Doing a density analysis can be annoying in some circumstances. To assign points to each element of the grid in the worst case scenario, a double for loop is performed on rows and columns. Let's see how to make the process painless.
 
-### Define dataframe of points
+## Define dataframe of points
 First, a set of random points is generated
 
 ```{r, fig.width = 6, fig.height = 4}
@@ -44,7 +44,7 @@ ggplot(df_points) +
   geom_point(aes(x, y), color = "steelblue4", size = 0.1)
 ```
 
-### Make 2D grid
+## Make 2D grid
 Then a two-dimensional grid is built. A two-dimensional grid is defined by lower and upper bound along $x$ and $y$, and the number of cell along $x$ and $y$.
 
 ```{r}
@@ -81,7 +81,7 @@ by = "h"      by = "v"
 
 In both cases the count starts from bottom left.
 
-### Assign points to cells
+## Assign points to cells
 Each point of the dataframe is assigned to its respective grid cell via `getCell()`.
 The `getCell()` function takes as input an object of `Grid2d` class and a matrix or dataframe of points; if the passed matrix or dataframe has more than two columns, the first two will be automatically selected.
 
@@ -95,7 +95,7 @@ head(df_points)
 The values of `grid_index` column range from 1 to 2500, which is the number of elements in the grid.
 
 
-### Count the points
+## Count the points
 To get the occurrence of points in each cell just manipulate the previous result and get the grid coordinates. To facilitate the operation, use `getCounts()` function that takes `grid2d` and `grid_index` as input and returns a dataframe of three columns: the first two represent the coordinates of each element of the grid and the third represents the occurrence of points in each cell
 
 ```{r}

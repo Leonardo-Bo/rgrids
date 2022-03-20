@@ -44,6 +44,7 @@ df_points <- data.frame(x = c(rnorm(n = 5000, mean = -4),
 ggplot(df_points) + 
   geom_point(aes(x, y), color = "steelblue4", size = 0.1)
 ```
+
 ### Make 1D grid
 Then a one-dimensional grid is built. A one-dimensional grid is defined by the lower bound, the upper bound, and the number of vertical stripes.
 
@@ -84,7 +85,7 @@ ggplot(df_boxplot)+
 <!-- It is essential to add the `scale_x_discrete` line as in the example if you want to represent boxes without points (therefore empty spaces). By removing the line all the boxes are attached and the `x` axis shows jumps. -->
 
 ## Histogram
-There are functions that can generate a histogram and provide all the information about it. However, a histogram can also be obtained using the `getCell()` and `getCount()` function of `rgrids`.
+There are functions that can generate a histogram and provide all the information about it. However, a histogram can also be obtained using the `getCell()` and `getCounts()` function of `rgrids`.
 
 `getCell()` function assigns each point of the plane to its respective strip, counting strips from left to right, while `getCounts()` function counts how many points fall within each strip and returns a dataframe with two columns: the center of the bin (i.e. the center of the strip) and the count.
 

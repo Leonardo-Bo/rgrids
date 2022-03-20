@@ -91,7 +91,7 @@ dblocklist(mat1, 2)
 ## From list of matrices to single matrix
 Suppose we need to calculate the mean distance over time between all pairs of two sets of points. For convenience we use `list_matrix`: each matrix $k$ in the list is a set of distances at time $t_k$.
 
-The `meanMatrix()` function returns the mean of each element of matrix $(i, j)$
+The `meanMatrix()` function returns the mean of each element $(i, j)$ of matrix 
 
 ```{r}
 meanMatrix(list_matrix)

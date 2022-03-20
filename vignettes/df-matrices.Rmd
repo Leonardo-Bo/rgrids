@@ -25,7 +25,7 @@ library(ggplot2)
 There are many ways to achieve the same result in programming and thereafter there is nothing that cannot be done through operations on matrices. However, for data manipulation, the dataframe can be a more comfortable structure to work on.
 
 ## pileMatrix()
-There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via ggplot2 can be tricky if you don't use auxiliary packages.
+There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via `ggplot2` can be tricky if you don't use auxiliary packages.
 
 One possibility is to use the reshape2 package's melt function, but if you want only a part of the matrix then additional operations such as `upper.tri()` or similar are required.
 
@@ -57,6 +57,7 @@ head(pileMatrix(mat1, subset = "u"))
 
 pileMatrix(mat1, subset = "d")
 ```
+
 
 ## getTriang()
 The purpose of `getTriang()` is to filter parts of a dataframe when inside a workflow.
