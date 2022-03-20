@@ -25,6 +25,7 @@ Given a numeric matrix, a data.frame, a tibble or a data.table
 }
 \examples{
 mat <- matrix(1:9, nrow = 3)
+mat
 
 tableToLatex(mat)
 

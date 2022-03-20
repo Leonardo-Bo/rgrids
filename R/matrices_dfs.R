@@ -114,7 +114,14 @@ pileMatrix <- function(mat, subset = "full") {
 #'
 #' @examples
 #' df_grid <- expand.grid(x = 1:4, y = 1:4)
+#' df_grid$index <- 1:16
 #' df_grid
+#'
+#' # corresponding grid
+#' # 13 14 15 16
+#' #  9 10 11 12
+#' #  5  6  7  8
+#' #  1  2  3  4
 #'
 #' getTriang(nrow(df_grid), part = "upper", mirror = TRUE, diag = TRUE, by = "h")
 #'
