@@ -111,7 +111,12 @@ Let’s see how to proceed.</p>
     
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_points</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"steelblue4"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></code></pre></div>
-<p><img src="grids1d_files/figure-html/unnamed-chunk-2-1.png" width="576"> ### Make 1D grid Then a one-dimensional grid is built. A one-dimensional grid is defined by the lower bound, the upper bound, and the number of vertical stripes.</p>
+<p><img src="grids1d_files/figure-html/unnamed-chunk-2-1.png" width="576"></p>
+</div>
+<div class="section level3">
+<h3 id="make-1d-grid">Make 1D grid<a class="anchor" aria-label="anchor" href="#make-1d-grid"></a>
+</h3>
+<p>Then a one-dimensional grid is built. A one-dimensional grid is defined by the lower bound, the upper bound, and the number of vertical stripes.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># check the extreme values of the points along x</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">df_points</span><span class="op">$</span><span class="va">x</span><span class="op">)</span>
@@ -161,7 +166,7 @@ Let’s see how to proceed.</p>
 <div class="section level2">
 <h2 id="histogram">Histogram<a class="anchor" aria-label="anchor" href="#histogram"></a>
 </h2>
-<p>There are functions that can generate a histogram and provide all the information about it. However, a histogram can also be obtained using the <code><a href="../reference/getCell.html">getCell()</a></code> and <code>getCount()</code> function of <code>rgrids</code>.</p>
+<p>There are functions that can generate a histogram and provide all the information about it. However, a histogram can also be obtained using the <code><a href="../reference/getCell.html">getCell()</a></code> and <code><a href="../reference/getCounts.html">getCounts()</a></code> function of <code>rgrids</code>.</p>
 <p><code><a href="../reference/getCell.html">getCell()</a></code> function assigns each point of the plane to its respective strip, counting strips from left to right, while <code><a href="../reference/getCounts.html">getCounts()</a></code> function counts how many points fall within each strip and returns a dataframe with two columns: the center of the bin (i.e. the center of the strip) and the count.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df_points</span><span class="op">$</span><span class="va">grid_index</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getCell.html">getCell</a></span><span class="op">(</span><span class="va">grid1d</span>, <span class="va">df_points</span><span class="op">)</span>

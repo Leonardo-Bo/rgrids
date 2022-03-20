@@ -94,7 +94,7 @@
 <div class="section level2">
 <h2 id="pilematrix">pileMatrix()<a class="anchor" aria-label="anchor" href="#pilematrix"></a>
 </h2>
-<p>There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via ggplot2 can be tricky if you don’t use auxiliary packages.</p>
+<p>There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via <code>ggplot2</code> can be tricky if you don’t use auxiliary packages.</p>
 <p>One possibility is to use the reshape2 package’s melt function, but if you want only a part of the matrix then additional operations such as <code><a href="https://rdrr.io/r/base/lower.tri.html" class="external-link">upper.tri()</a></code> or similar are required.</p>
 <p>The <code><a href="../reference/pileMatrix.html">pileMatrix()</a></code> function simplifies these operations; it works similarly to the <code>reshape2::melt()</code> function, however, while not performing as <code>melt</code>, it allows you to easily choose the parts of interest of the matrix.</p>
 <p>We define a square test matrix</p>
@@ -162,26 +162,26 @@
 <p>We consider a dataframe of points and calculate the distances by all pairs of points. If you define intermediate variables, you can proceed in any way, including a for loop. But let’s see how to proceed with <code><a href="../reference/getTriang.html">getTriang()</a></code></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;             x         y index</span>
-<span class="co">#&gt; 1  0.65385101 0.2476276     1</span>
-<span class="co">#&gt; 2  0.17035030 0.1937868     2</span>
-<span class="co">#&gt; 3  0.26386438 0.5664283     3</span>
-<span class="co">#&gt; 4  0.01527999 0.1368409     4</span>
-<span class="co">#&gt; 5  0.83486599 0.6532120     5</span>
-<span class="co">#&gt; 6  0.53209731 0.3921725     6</span>
-<span class="co">#&gt; 7  0.16853578 0.7407021     7</span>
-<span class="co">#&gt; 8  0.10354678 0.9974361     8</span>
-<span class="co">#&gt; 9  0.01969208 0.0988410     9</span>
-<span class="co">#&gt; 10 0.06554905 0.7061200    10</span>
+<span class="co">#&gt;             x          y index</span>
+<span class="co">#&gt; 1  0.55563752 0.95836099     1</span>
+<span class="co">#&gt; 2  0.57824655 0.61838355     2</span>
+<span class="co">#&gt; 3  0.32004683 0.50946451     3</span>
+<span class="co">#&gt; 4  0.06835949 0.16886147     4</span>
+<span class="co">#&gt; 5  0.85377711 0.11604211     5</span>
+<span class="co">#&gt; 6  0.85489834 0.09741858     6</span>
+<span class="co">#&gt; 7  0.27124534 0.39526790     7</span>
+<span class="co">#&gt; 8  0.50013320 0.41488649     8</span>
+<span class="co">#&gt; 9  0.12332687 0.93410815     9</span>
+<span class="co">#&gt; 10 0.95674232 0.08826750    10</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;          x.x       y.x index.x      x.y       y.y index.y</span>
-<span class="co">#&gt; 1 0.65385101 0.2476276       1 0.653851 0.2476276       1</span>
-<span class="co">#&gt; 2 0.17035030 0.1937868       2 0.653851 0.2476276       1</span>
-<span class="co">#&gt; 3 0.26386438 0.5664283       3 0.653851 0.2476276       1</span>
-<span class="co">#&gt; 4 0.01527999 0.1368409       4 0.653851 0.2476276       1</span>
-<span class="co">#&gt; 5 0.83486599 0.6532120       5 0.653851 0.2476276       1</span>
-<span class="co">#&gt; 6 0.53209731 0.3921725       6 0.653851 0.2476276       1</span></code></pre></div>
+<span class="co">#&gt;          x.x        y.x index.x       x.y      y.y index.y</span>
+<span class="co">#&gt; 1 0.55563752 0.95836099       1 0.5556375 0.958361       1</span>
+<span class="co">#&gt; 2 0.57824655 0.61838355       2 0.5556375 0.958361       1</span>
+<span class="co">#&gt; 3 0.32004683 0.50946451       3 0.5556375 0.958361       1</span>
+<span class="co">#&gt; 4 0.06835949 0.16886147       4 0.5556375 0.958361       1</span>
+<span class="co">#&gt; 5 0.85377711 0.11604211       5 0.5556375 0.958361       1</span>
+<span class="co">#&gt; 6 0.85489834 0.09741858       6 0.5556375 0.958361       1</span></code></pre></div>
 <p>The <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> function returns all possible pairs, but the distance of a point with itself does not matter because it is always zero and furthermore the distance between points <span class="math inline">\(a - b\)</span> is the same between <span class="math inline">\(b - a\)</span>, so we want to discard the repetitions.</p>
 <p>We can do this with <code><a href="../reference/getTriang.html">getTriang()</a></code> which given the number of cells of a square matrix (in fact the dataframe we are using can be seen as a square matrix) returns the indices of the desired matrix elements; in particular, you can choose the upper or lower part of the matrix, with or without diagonal, in the main direction or in the mirrored direction; moreover it is possible to choose the direction in which the elements of the matrix are reported (i.e. increasing the <span class="math inline">\(x\)</span> (<code>"h"</code>) or the <span class="math inline">\(y\)</span> (<code>"v"</code>) faster), for a total of 16 possibilities.</p>
 <p>For clarity we calculate all distances and then filter only those of the lower part without diagonal, but to perform fewer calculations it would be better to filter first.</p>
