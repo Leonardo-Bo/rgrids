@@ -1,11 +1,11 @@
 #' Convert R table in LaTeX table
 #'
-#' @description Given a numeric matrix, a data.frame, a tibble or a data.table
+#' @description Given a matrix, a data.frame, a tibble or a data.table
 #'     returns a basic LaTeX table write with table and tabular packages.
 #'     Rownames and colnames are highlighted with bold.
 #'
 #' @name tableToLatex
-#' @param object A numeric matrix, data.frame, tibble or data.table
+#' @param object A matrix, data.frame, tibble or data.table
 #' @param digits Number of decimals. Default = 3
 #' @param file If TRUE write file with object name in work directory. Default FALSE
 #' @param double_space If TRUE add empty columns to increase space between columns
@@ -22,23 +22,18 @@
 #' @export
 tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE) {
 
-  mat <- object
-
-  if (!any(class(mat) == "data.frame") & !any(class(mat) == "matrix")) {
+  if (!any(class(object) == "data.frame") & !any(class(object) == "matrix")) {
     stop("object must be matrix, data.frame, data.table or tibble")
   }
 
-  mat <- as.matrix(mat)
-
-  if (!is.numeric(mat) & !all(is.na(mat))) {
-    stop("all object elements must be numeric or NA")
-  }
-
-  mat <- format(round(mat, digits), nsmall = digits)
+  df <- as.data.frame(object)
+  numeric_columns <- vapply(df, is.numeric, FUN.VALUE = logical(1))
+  df[, numeric_columns] <- format(round(df[, numeric_columns], digits), nsmall = digits)
+  mat <- as.matrix(df)
 
   header <- "\\begin{table}[htbp] \n\\centering \n"
 
-  ## rownames e colnames nulli
+  ## NULL rownames and colnames
   if (is.null(colnames(mat)) & is.null(rownames(mat))) {
     if (double_space) {
       n_col <- paste(rep("c", (ncol(mat)*2)-1), collapse = "")
@@ -54,7 +49,7 @@ tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE)
     }
   }
 
-  ## colnames non nullo
+  ## not NULL colnames
   if (!is.null(colnames(mat)) & is.null(rownames(mat))) {
     mat <- rbind(colnames(mat), mat)
     colnames(mat) <- NULL
@@ -75,7 +70,7 @@ tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE)
     }
   }
 
-  ## rownames non nullo
+  ## not NULL rownames
   if (is.null(colnames(mat)) & !is.null(rownames(mat))) {
     mat <- cbind(` ` = rownames(mat), mat)
     rownames(mat) <- NULL
@@ -96,7 +91,7 @@ tableToLatex <- function(object, digits = 3, file = FALSE, double_space = FALSE)
     }
   }
 
-  ## rownames e colnames non nulli
+  ## not NULL rownames and colnames
   if (!is.null(colnames(mat)) & !is.null(rownames(mat))) {
     mat <- cbind(` ` = rownames(mat), mat)
     rownames(mat) <- NULL
