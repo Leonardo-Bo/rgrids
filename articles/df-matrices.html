@@ -182,25 +182,25 @@ in any way, including a for loop. But let’s see how to proceed with
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;             x          y index</span></span>
-<span><span class="co">#&gt; 1  0.71998455 0.88017962     1</span></span>
-<span><span class="co">#&gt; 2  0.05465301 0.19050296     2</span></span>
-<span><span class="co">#&gt; 3  0.96957016 0.87061190     3</span></span>
-<span><span class="co">#&gt; 4  0.61843508 0.06579696     4</span></span>
-<span><span class="co">#&gt; 5  0.46620214 0.13725597     5</span></span>
-<span><span class="co">#&gt; 6  0.72148925 0.45068043     6</span></span>
-<span><span class="co">#&gt; 7  0.10560604 0.64190306     7</span></span>
-<span><span class="co">#&gt; 8  0.04055059 0.70418872     8</span></span>
-<span><span class="co">#&gt; 9  0.10451288 0.01686397     9</span></span>
-<span><span class="co">#&gt; 10 0.70063343 0.75484712    10</span></span>
+<span><span class="co">#&gt; 1  0.69618102 0.58737686     1</span></span>
+<span><span class="co">#&gt; 2  0.19163013 0.52793438     2</span></span>
+<span><span class="co">#&gt; 3  0.65018733 0.50554040     3</span></span>
+<span><span class="co">#&gt; 4  0.08622635 0.61784910     4</span></span>
+<span><span class="co">#&gt; 5  0.29082276 0.53915125     5</span></span>
+<span><span class="co">#&gt; 6  0.44424735 0.76175630     6</span></span>
+<span><span class="co">#&gt; 7  0.30796719 0.04614913     7</span></span>
+<span><span class="co">#&gt; 8  0.17826514 0.23977671     8</span></span>
+<span><span class="co">#&gt; 9  0.66795572 0.71570446     9</span></span>
+<span><span class="co">#&gt; 10 0.55283737 0.95921703    10</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;          x.x        y.x index.x       x.y       y.y index.y</span></span>
-<span><span class="co">#&gt; 1 0.71998455 0.88017962       1 0.7199846 0.8801796       1</span></span>
-<span><span class="co">#&gt; 2 0.05465301 0.19050296       2 0.7199846 0.8801796       1</span></span>
-<span><span class="co">#&gt; 3 0.96957016 0.87061190       3 0.7199846 0.8801796       1</span></span>
-<span><span class="co">#&gt; 4 0.61843508 0.06579696       4 0.7199846 0.8801796       1</span></span>
-<span><span class="co">#&gt; 5 0.46620214 0.13725597       5 0.7199846 0.8801796       1</span></span>
-<span><span class="co">#&gt; 6 0.72148925 0.45068043       6 0.7199846 0.8801796       1</span></span></code></pre></div>
+<span><span class="co">#&gt;          x.x       y.x index.x      x.y       y.y index.y</span></span>
+<span><span class="co">#&gt; 1 0.69618102 0.5873769       1 0.696181 0.5873769       1</span></span>
+<span><span class="co">#&gt; 2 0.19163013 0.5279344       2 0.696181 0.5873769       1</span></span>
+<span><span class="co">#&gt; 3 0.65018733 0.5055404       3 0.696181 0.5873769       1</span></span>
+<span><span class="co">#&gt; 4 0.08622635 0.6178491       4 0.696181 0.5873769       1</span></span>
+<span><span class="co">#&gt; 5 0.29082276 0.5391513       5 0.696181 0.5873769       1</span></span>
+<span><span class="co">#&gt; 6 0.44424735 0.7617563       6 0.696181 0.5873769       1</span></span></code></pre></div>
 <p>The <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> function returns all possible pairs, but the
 distance of a point with itself does not matter because it is always
 zero and furthermore the distance between points <span class="math inline">\(a - b\)</span> is the same between <span class="math inline">\(b - a\)</span>, so we want to discard the
