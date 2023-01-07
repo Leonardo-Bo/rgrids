@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="rgrids">
-<title>dataframes &lt;==&gt; matrices • rgrids</title>
+<title>dataframes  matrices • rgrids</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -14,10 +14,10 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dataframes &lt;==&gt; matrices">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dataframes &lt;==&gt; matrices">
 <meta property="og:description" content="rgrids">
 <meta property="og:image" content="https://leonardo-bo.github.io/rgrids/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">rgrids</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,9 +75,10 @@
 
 
 
-<script src="df-matrices_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
-  <main id="main"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>dataframes &lt;==&gt; matrices</h1>
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>dataframes  matrices</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/Leonardo-Bo/rgrids/blob/HEAD/vignettes/df-matrices.Rmd" class="external-link"><code>vignettes/df-matrices.Rmd</code></a></small>
@@ -86,40 +87,54 @@
 
     
     
-<p>This vignette shows how to switch from matrices to dataframes and vice versa.</p>
+<p>This vignette shows how to switch from matrices to dataframes and
+vice versa.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Leonardo-Bo/rgrids" class="external-link">rgrids</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></code></pre></div>
-<p>There are many ways to achieve the same result in programming and thereafter there is nothing that cannot be done through operations on matrices. However, for data manipulation, the dataframe can be a more comfortable structure to work on.</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Leonardo-Bo/rgrids" class="external-link">rgrids</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<p>There are many ways to achieve the same result in programming and
+thereafter there is nothing that cannot be done through operations on
+matrices. However, for data manipulation, the dataframe can be a more
+comfortable structure to work on.</p>
 <div class="section level2">
 <h2 id="pilematrix">pileMatrix()<a class="anchor" aria-label="anchor" href="#pilematrix"></a>
 </h2>
-<p>There are some operations, such as covariance, which return a matrix as a result. Wanting to represent covariance via <code>ggplot2</code> can be tricky if you don’t use auxiliary packages.</p>
-<p>One possibility is to use the reshape2 package’s melt function, but if you want only a part of the matrix then additional operations such as <code><a href="https://rdrr.io/r/base/lower.tri.html" class="external-link">upper.tri()</a></code> or similar are required.</p>
-<p>The <code><a href="../reference/pileMatrix.html">pileMatrix()</a></code> function simplifies these operations; it works similarly to the <code>reshape2::melt()</code> function, however, while not performing as <code>melt</code>, it allows you to easily choose the parts of interest of the matrix.</p>
+<p>There are some operations, such as covariance, which return a matrix
+as a result. Wanting to represent covariance via <code>ggplot2</code>
+can be tricky if you don’t use auxiliary packages.</p>
+<p>One possibility is to use the reshape2 package’s melt function, but
+if you want only a part of the matrix then additional operations such as
+<code><a href="https://rdrr.io/r/base/lower.tri.html" class="external-link">upper.tri()</a></code> or similar are required.</p>
+<p>The <code><a href="../reference/pileMatrix.html">pileMatrix()</a></code> function simplifies these operations;
+it works similarly to the <code>reshape2::melt()</code> function,
+however, while not performing as <code>melt</code>, it allows you to
+easily choose the parts of interest of the matrix.</p>
 <p>We define a square test matrix</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">(</span><span class="va">mat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">64</span>, nrow <span class="op">=</span> <span class="fl">8</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]</span>
-<span class="co">#&gt; [1,]    1    2    3    4    5    6    7    8</span>
-<span class="co">#&gt; [2,]    9   10   11   12   13   14   15   16</span>
-<span class="co">#&gt; [3,]   17   18   19   20   21   22   23   24</span>
-<span class="co">#&gt; [4,]   25   26   27   28   29   30   31   32</span>
-<span class="co">#&gt; [5,]   33   34   35   36   37   38   39   40</span>
-<span class="co">#&gt; [6,]   41   42   43   44   45   46   47   48</span>
-<span class="co">#&gt; [7,]   49   50   51   52   53   54   55   56</span>
-<span class="co">#&gt; [8,]   57   58   59   60   61   62   63   64</span></code></pre></div>
-<p>Using <code><a href="../reference/pileMatrix.html">pileMatrix()</a></code> we obtain a dataframe of three columns, where the first two indicate the row and column of the matrix, while the third indicates the value of the matrix element</p>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">mat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">64</span>, nrow <span class="op">=</span> <span class="fl">8</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]</span></span>
+<span><span class="co">#&gt; [1,]    1    2    3    4    5    6    7    8</span></span>
+<span><span class="co">#&gt; [2,]    9   10   11   12   13   14   15   16</span></span>
+<span><span class="co">#&gt; [3,]   17   18   19   20   21   22   23   24</span></span>
+<span><span class="co">#&gt; [4,]   25   26   27   28   29   30   31   32</span></span>
+<span><span class="co">#&gt; [5,]   33   34   35   36   37   38   39   40</span></span>
+<span><span class="co">#&gt; [6,]   41   42   43   44   45   46   47   48</span></span>
+<span><span class="co">#&gt; [7,]   49   50   51   52   53   54   55   56</span></span>
+<span><span class="co">#&gt; [8,]   57   58   59   60   61   62   63   64</span></span></code></pre></div>
+<p>Using <code><a href="../reference/pileMatrix.html">pileMatrix()</a></code> we obtain a dataframe of three
+columns, where the first two indicate the row and column of the matrix,
+while the third indicates the value of the matrix element</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;   row col value</span>
-<span class="co">#&gt; 1   1   1     1</span>
-<span class="co">#&gt; 2   2   1     9</span>
-<span class="co">#&gt; 3   3   1    17</span>
-<span class="co">#&gt; 4   4   1    25</span>
-<span class="co">#&gt; 5   5   1    33</span>
-<span class="co">#&gt; 6   6   1    41</span></code></pre></div>
-<p>It is possible which part of the matrix to stack by choosing between:</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   row col value</span></span>
+<span><span class="co">#&gt; 1   1   1     1</span></span>
+<span><span class="co">#&gt; 2   2   1     9</span></span>
+<span><span class="co">#&gt; 3   3   1    17</span></span>
+<span><span class="co">#&gt; 4   4   1    25</span></span>
+<span><span class="co">#&gt; 5   5   1    33</span></span>
+<span><span class="co">#&gt; 6   6   1    41</span></span></code></pre></div>
+<p>It is possible which part of the matrix to stack by choosing
+between:</p>
 <ul>
 <li>
 <code>"full"</code>: the whole matrix (default),</li>
@@ -135,91 +150,109 @@
 <code>"d"</code>: only the diagonal</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span>, subset <span class="op">=</span> <span class="st">"u"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;   row col value</span>
-<span class="co">#&gt; 1   1   2     2</span>
-<span class="co">#&gt; 2   1   3     3</span>
-<span class="co">#&gt; 3   2   3    11</span>
-<span class="co">#&gt; 4   1   4     4</span>
-<span class="co">#&gt; 5   2   4    12</span>
-<span class="co">#&gt; 6   3   4    20</span>
-
-<span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span>, subset <span class="op">=</span> <span class="st">"d"</span><span class="op">)</span>
-<span class="co">#&gt;   row col value</span>
-<span class="co">#&gt; 1   1   1     1</span>
-<span class="co">#&gt; 2   2   2    10</span>
-<span class="co">#&gt; 3   3   3    19</span>
-<span class="co">#&gt; 4   4   4    28</span>
-<span class="co">#&gt; 5   5   5    37</span>
-<span class="co">#&gt; 6   6   6    46</span>
-<span class="co">#&gt; 7   7   7    55</span>
-<span class="co">#&gt; 8   8   8    64</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span>, subset <span class="op">=</span> <span class="st">"u"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   row col value</span></span>
+<span><span class="co">#&gt; 1   1   2     2</span></span>
+<span><span class="co">#&gt; 2   1   3     3</span></span>
+<span><span class="co">#&gt; 3   2   3    11</span></span>
+<span><span class="co">#&gt; 4   1   4     4</span></span>
+<span><span class="co">#&gt; 5   2   4    12</span></span>
+<span><span class="co">#&gt; 6   3   4    20</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/pileMatrix.html">pileMatrix</a></span><span class="op">(</span><span class="va">mat1</span>, subset <span class="op">=</span> <span class="st">"d"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   row col value</span></span>
+<span><span class="co">#&gt; 1   1   1     1</span></span>
+<span><span class="co">#&gt; 2   2   2    10</span></span>
+<span><span class="co">#&gt; 3   3   3    19</span></span>
+<span><span class="co">#&gt; 4   4   4    28</span></span>
+<span><span class="co">#&gt; 5   5   5    37</span></span>
+<span><span class="co">#&gt; 6   6   6    46</span></span>
+<span><span class="co">#&gt; 7   7   7    55</span></span>
+<span><span class="co">#&gt; 8   8   8    64</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="gettriang">getTriang()<a class="anchor" aria-label="anchor" href="#gettriang"></a>
 </h2>
-<p>The purpose of <code><a href="../reference/getTriang.html">getTriang()</a></code> is to filter parts of a dataframe when inside a workflow.</p>
-<p>We consider a dataframe of points and calculate the distances by all pairs of points. If you define intermediate variables, you can proceed in any way, including a for loop. But let’s see how to proceed with <code><a href="../reference/getTriang.html">getTriang()</a></code></p>
+<p>The purpose of <code><a href="../reference/getTriang.html">getTriang()</a></code> is to filter parts of a
+dataframe when inside a workflow.</p>
+<p>We consider a dataframe of points and calculate the distances by all
+pairs of points. If you define intermediate variables, you can proceed
+in any way, including a for loop. But let’s see how to proceed with
+<code><a href="../reference/getTriang.html">getTriang()</a></code></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">(</span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;             x          y index</span>
-<span class="co">#&gt; 1  0.55563752 0.95836099     1</span>
-<span class="co">#&gt; 2  0.57824655 0.61838355     2</span>
-<span class="co">#&gt; 3  0.32004683 0.50946451     3</span>
-<span class="co">#&gt; 4  0.06835949 0.16886147     4</span>
-<span class="co">#&gt; 5  0.85377711 0.11604211     5</span>
-<span class="co">#&gt; 6  0.85489834 0.09741858     6</span>
-<span class="co">#&gt; 7  0.27124534 0.39526790     7</span>
-<span class="co">#&gt; 8  0.50013320 0.41488649     8</span>
-<span class="co">#&gt; 9  0.12332687 0.93410815     9</span>
-<span class="co">#&gt; 10 0.95674232 0.08826750    10</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;          x.x        y.x index.x       x.y      y.y index.y</span>
-<span class="co">#&gt; 1 0.55563752 0.95836099       1 0.5556375 0.958361       1</span>
-<span class="co">#&gt; 2 0.57824655 0.61838355       2 0.5556375 0.958361       1</span>
-<span class="co">#&gt; 3 0.32004683 0.50946451       3 0.5556375 0.958361       1</span>
-<span class="co">#&gt; 4 0.06835949 0.16886147       4 0.5556375 0.958361       1</span>
-<span class="co">#&gt; 5 0.85377711 0.11604211       5 0.5556375 0.958361       1</span>
-<span class="co">#&gt; 6 0.85489834 0.09741858       6 0.5556375 0.958361       1</span></code></pre></div>
-<p>The <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> function returns all possible pairs, but the distance of a point with itself does not matter because it is always zero and furthermore the distance between points <span class="math inline">\(a - b\)</span> is the same between <span class="math inline">\(b - a\)</span>, so we want to discard the repetitions.</p>
-<p>We can do this with <code><a href="../reference/getTriang.html">getTriang()</a></code> which given the number of cells of a square matrix (in fact the dataframe we are using can be seen as a square matrix) returns the indices of the desired matrix elements; in particular, you can choose the upper or lower part of the matrix, with or without diagonal, in the main direction or in the mirrored direction; moreover it is possible to choose the direction in which the elements of the matrix are reported (i.e. increasing the <span class="math inline">\(x\)</span> (<code>"h"</code>) or the <span class="math inline">\(y\)</span> (<code>"v"</code>) faster), for a total of 16 possibilities.</p>
-<p>For clarity we calculate all distances and then filter only those of the lower part without diagonal, but to perform fewer calculations it would be better to filter first.</p>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;            x          y index</span></span>
+<span><span class="co">#&gt; 1  0.3925798 0.45142936     1</span></span>
+<span><span class="co">#&gt; 2  0.6789837 0.55658420     2</span></span>
+<span><span class="co">#&gt; 3  0.6731213 0.69864169     3</span></span>
+<span><span class="co">#&gt; 4  0.8718617 0.06834259     4</span></span>
+<span><span class="co">#&gt; 5  0.2504526 0.73491926     5</span></span>
+<span><span class="co">#&gt; 6  0.9693062 0.36119518     6</span></span>
+<span><span class="co">#&gt; 7  0.2198829 0.17600445     7</span></span>
+<span><span class="co">#&gt; 8  0.6469422 0.62971327     8</span></span>
+<span><span class="co">#&gt; 9  0.3297866 0.18869608     9</span></span>
+<span><span class="co">#&gt; 10 0.1463654 0.57821380    10</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;         x.x        y.x index.x       x.y       y.y index.y</span></span>
+<span><span class="co">#&gt; 1 0.3925798 0.45142936       1 0.3925798 0.4514294       1</span></span>
+<span><span class="co">#&gt; 2 0.6789837 0.55658420       2 0.3925798 0.4514294       1</span></span>
+<span><span class="co">#&gt; 3 0.6731213 0.69864169       3 0.3925798 0.4514294       1</span></span>
+<span><span class="co">#&gt; 4 0.8718617 0.06834259       4 0.3925798 0.4514294       1</span></span>
+<span><span class="co">#&gt; 5 0.2504526 0.73491926       5 0.3925798 0.4514294       1</span></span>
+<span><span class="co">#&gt; 6 0.9693062 0.36119518       6 0.3925798 0.4514294       1</span></span></code></pre></div>
+<p>The <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> function returns all possible pairs, but the
+distance of a point with itself does not matter because it is always
+zero and furthermore the distance between points <span class="math inline">\(a - b\)</span> is the same between <span class="math inline">\(b - a\)</span>, so we want to discard the
+repetitions.</p>
+<p>We can do this with <code><a href="../reference/getTriang.html">getTriang()</a></code> which given the number
+of cells of a square matrix (in fact the dataframe we are using can be
+seen as a square matrix) returns the indices of the desired matrix
+elements; in particular, you can choose the upper or lower part of the
+matrix, with or without diagonal, in the main direction or in the
+mirrored direction; moreover it is possible to choose the direction in
+which the elements of the matrix are reported (i.e. increasing the <span class="math inline">\(x\)</span> (<code>"h"</code>) or the <span class="math inline">\(y\)</span> (<code>"v"</code>) faster), for a total
+of 16 possibilities.</p>
+<p>For clarity we calculate all distances and then filter only those of
+the lower part without diagonal, but to perform fewer calculations it
+would be better to filter first.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">df_merge</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="co"># calculate distance</span>
-<span class="va">df_merge</span><span class="op">$</span><span class="va">distance</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="va">df_merge</span><span class="op">$</span><span class="va">x.x</span> <span class="op">-</span> <span class="va">df_merge</span><span class="op">$</span><span class="va">x.y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="va">df_merge</span><span class="op">$</span><span class="va">y.x</span> <span class="op">-</span> <span class="va">df_merge</span><span class="op">$</span><span class="va">y.y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>
-
-<span class="co"># define lower triangular matrix index without diagonal</span>
-<span class="va">lower_ndx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTriang.html">getTriang</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span>, diag <span class="op">=</span> <span class="cn">FALSE</span>, part <span class="op">=</span> <span class="st">"lower"</span><span class="op">)</span>
-
-<span class="co"># filter df_merge</span>
-<span class="va">df_merge_filter</span> <span class="op">&lt;-</span> <span class="va">df_merge</span><span class="op">[</span><span class="va">lower_ndx</span>, <span class="op">]</span>
-
-<span class="co"># join dataframe to representation</span>
-<span class="va">df_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">df_merge</span>, <span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span>
-<span class="va">df_full</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"full"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"filter"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_full</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">index.x</span>, y <span class="op">=</span> <span class="va">index.y</span>, fill <span class="op">=</span> <span class="va">distance</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">group</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">df_merge</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">df1</span>, y <span class="op">=</span> <span class="va">df1</span>, by <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># calculate distance</span></span>
+<span><span class="va">df_merge</span><span class="op">$</span><span class="va">distance</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="va">df_merge</span><span class="op">$</span><span class="va">x.x</span> <span class="op">-</span> <span class="va">df_merge</span><span class="op">$</span><span class="va">x.y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="op">(</span><span class="va">df_merge</span><span class="op">$</span><span class="va">y.x</span> <span class="op">-</span> <span class="va">df_merge</span><span class="op">$</span><span class="va">y.y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># define lower triangular matrix index without diagonal</span></span>
+<span><span class="va">lower_ndx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTriang.html">getTriang</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span>, diag <span class="op">=</span> <span class="cn">FALSE</span>, part <span class="op">=</span> <span class="st">"lower"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># filter df_merge</span></span>
+<span><span class="va">df_merge_filter</span> <span class="op">&lt;-</span> <span class="va">df_merge</span><span class="op">[</span><span class="va">lower_ndx</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># join dataframe to representation</span></span>
+<span><span class="va">df_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">df_merge</span>, <span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df_full</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"full"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"filter"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_full</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">index.x</span>, y <span class="op">=</span> <span class="va">index.y</span>, fill <span class="op">=</span> <span class="va">distance</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">group</span><span class="op">)</span></span></code></pre></div>
 <p><img src="df-matrices_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
-<p>Due to how <code>R</code> counts matrix elements and how we set up the indices, we see that we have not selected the right part. What we need is the lower part, but in the mirrored direction</p>
+<p>Due to how <code>R</code> counts matrix elements and how we set up
+the indices, we see that we have not selected the right part. What we
+need is the lower part, but in the mirrored direction</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># define mirrored lower triangular matrix index without diagonal</span>
-<span class="va">lower_mir_ndx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTriang.html">getTriang</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span>, diag <span class="op">=</span> <span class="cn">FALSE</span>, part <span class="op">=</span> <span class="st">"lower"</span>, mirror <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="co"># filter df_merge</span>
-<span class="va">df_merge_filter</span> <span class="op">&lt;-</span> <span class="va">df_merge</span><span class="op">[</span><span class="va">lower_mir_ndx</span>, <span class="op">]</span>
-
-<span class="co"># join dataframe to representation</span>
-<span class="va">df_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">df_merge</span>, <span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span>
-<span class="va">df_full</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"full"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"filter"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_full</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">index.x</span>, y <span class="op">=</span> <span class="va">index.y</span>, fill <span class="op">=</span> <span class="va">distance</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">group</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># define mirrored lower triangular matrix index without diagonal</span></span>
+<span><span class="va">lower_mir_ndx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTriang.html">getTriang</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span>, diag <span class="op">=</span> <span class="cn">FALSE</span>, part <span class="op">=</span> <span class="st">"lower"</span>, mirror <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># filter df_merge</span></span>
+<span><span class="va">df_merge_filter</span> <span class="op">&lt;-</span> <span class="va">df_merge</span><span class="op">[</span><span class="va">lower_mir_ndx</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># join dataframe to representation</span></span>
+<span><span class="va">df_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">df_merge</span>, <span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df_full</span><span class="op">$</span><span class="va">group</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"full"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"filter"</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df_merge_filter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_full</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">index.x</span>, y <span class="op">=</span> <span class="va">index.y</span>, fill <span class="op">=</span> <span class="va">distance</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">group</span><span class="op">)</span></span></code></pre></div>
 <p><img src="df-matrices_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -235,7 +268,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
     </footer>
