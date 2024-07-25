@@ -1,96 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/404.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/articles/df-matrices.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/articles/grids1d.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/articles/grids2d.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/articles/matrices.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/index.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/blocklist.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/blockmax.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/blockmean.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/blockmin.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/colMax.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/colMin.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/dblocklist.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/dotMatrix.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/getBoxplot.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/getCell.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/getCounts.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/getTriang.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid1d.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid2d.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid3d.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/meanMatrix.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/pileMatrix.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/rowMax.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/rowMin.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/sumMatrix.html</loc>
-  </url>
-  <url>
-    <loc>https://leonardo-bo.github.io/rgrids/reference/tableToLatex.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://leonardo-bo.github.io/rgrids/404.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/LICENSE.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/articles/df-matrices.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/articles/grids1d.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/articles/grids2d.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/articles/index.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/articles/matrices.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/authors.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/index.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/blocklist.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/blockmax.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/blockmean.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/blockmin.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/colMax.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/colMin.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/dblocklist.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/dotMatrix.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/getBoxplot.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/getCell.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/getCounts.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/getTriang.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/index.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid1d.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid2d.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/makeGrid3d.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/meanMatrix.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/pileMatrix.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/rowMax.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/rowMin.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/sumMatrix.html</loc></url>
+<url><loc>https://leonardo-bo.github.io/rgrids/reference/tableToLatex.html</loc></url>
 </urlset>
+
